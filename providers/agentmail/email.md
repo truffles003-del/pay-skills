@@ -22,3 +22,12 @@ endpoints:
 
 Agentic email service. Create inboxes, send and receive email for AI agents.
 Each inbox gets a unique address that can send and receive messages immediately.
+
+## Spend-aware usage
+
+- Use `inbox/messages` directly when the user already has an inbox identifier or
+  address. Do not create a new inbox just to check existing mail.
+- Create an inbox once, then reuse it for send and receive workflows. Ask before
+  creating multiple inboxes or long-running polling loops.
+- For "check my mail" style requests, make one message-list call first and only
+  fetch or summarize individual messages if the returned list is not enough.

@@ -43,3 +43,12 @@ endpoints:
 
 Domain registration, renewal, and DNS management via stablecoin micropayments.
 Supports .com, .org, .net, .io, .ai, .dev, .app, .xyz. Bonding curve pricing.
+
+## Spend-aware usage
+
+- Domain registration and renewal are purchase-like actions. Confirm the exact
+  domain, TLD, term, and expected charge before calling `register` or `renew`.
+- Use `dns` for record management after the domain exists. Do not call register
+  as an availability probe unless the user is ready to buy that exact domain.
+- Batch DNS record changes in one request when the endpoint body supports it,
+  and ask before destructive record deletes.

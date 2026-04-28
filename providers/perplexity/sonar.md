@@ -69,3 +69,15 @@ endpoint, and a one-shot `search` endpoint.
 > **Network compatibility:** the live 402 challenge advertises Base USDC only
 > — Solana payment was not in the accepted list at audit time. Confirm with
 > `pay skills probe` before publishing.
+
+## Spend-aware usage
+
+- Use synchronous `v1/sonar` for one grounded answer with citations. Use
+  `v1/search` when the user wants links/snippets rather than a generated answer.
+- Use async Sonar only for long-running research where polling is worth the
+  extra coordination. Keep the returned request ID and poll it instead of
+  submitting the same prompt again.
+- Skip `v1/models` unless the user asks which models are available or a previous
+  request fails because of an unknown model.
+- This provider currently advertises Base-only payment; do not try it from a
+  Solana-only Pay wallet.

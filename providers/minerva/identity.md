@@ -74,3 +74,14 @@ All paths are under `/api/minerva/`. Body shape for `validate-emails` is
 > **Network compatibility:** the live 402 challenge advertises Base USDC and
 > MPP via Tempo only — Solana mainnet was not in the accepted list at audit
 > time. Confirm with `pay skills probe` before publishing.
+
+## Spend-aware usage
+
+- Use `validate-emails` in batches up to the documented limit instead of one
+  request per email address.
+- For a known person-search result ID, use the cheaper `person-search/get`
+  endpoint rather than creating a new search.
+- Ask before broad people searches, demographic enrichment, or workflows that
+  may page through many result sets.
+- This provider may not be payable from a Solana-only wallet. Check network
+  compatibility before planning paid calls from Pay.

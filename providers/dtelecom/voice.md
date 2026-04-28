@@ -23,3 +23,12 @@ endpoints:
 Pay-per-use communication APIs for AI agents. WebRTC for real-time voice,
 plus speech-to-text and text-to-speech. Decentralized infrastructure
 with low-latency global coverage.
+
+## Spend-aware usage
+
+- Use `stt` for one-shot transcription and `tts` for one-shot speech synthesis.
+  Use `webrtc` only when the user wants an interactive live voice session.
+- Before starting WebRTC, confirm the conversation goal, expected duration, and
+  whether the user is ready to join. Do not open realtime sessions speculatively.
+- For TTS, send the final text once instead of generating several voice variants
+  unless the user explicitly asks to compare voices.

@@ -119,3 +119,15 @@ redirects in your HTTP client.
 > **Network compatibility:** the live 402 challenge currently accepts Base USDC
 > only — Solana payment was not in the accepted list at audit time. Confirm
 > with `pay skills probe` before publishing.
+
+## Spend-aware usage
+
+- Use `api/x402/resources/search` for keyword discovery and
+  `api/x402/resources` for browsing or pagination. Do not call both unless the
+  first result set is insufficient.
+- Use merchant and wallet transaction endpoints only when the address is known.
+  Otherwise search resources or merchants first with a narrow query.
+- Registry write endpoints use SIWX. Confirm the origin/resource URL before
+  registering, and do not register third-party origins speculatively.
+- `api/x402/send` moves USDC. Treat it as a transfer: confirm recipient, chain,
+  amount, and fee before paying.
