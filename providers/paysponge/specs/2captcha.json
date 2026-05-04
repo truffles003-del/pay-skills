@@ -1,0 +1,366 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "My Fake Version!",
+        "description": "2Captcha CAPTCHA solving API â€” solves reCAPTCHA v2/v3, hCaptcha, Cloudflare Turnstile, FunCaptcha, GeeTest, image captchas, and more",
+        "version": "1.0.0",
+        "x-agentcash-auth": {
+            "mode": "paid"
+        }
+    },
+    "servers": [
+        {
+            "url": "https://2captcha.x402.paysponge.com"
+        }
+    ],
+    "paths": {
+        "/createTask": {
+            "post": {
+                "summary": "POST /createTask",
+                "x-agentcash-auth": {
+                    "mode": "paid"
+                },
+                "x-payment-required": true,
+                "x-payment-info": {
+                    "protocols": [
+                        "x402"
+                    ],
+                    "pricingMode": "fixed",
+                    "price": "$0.01"
+                },
+                "x402Version": 2,
+                "resource": {
+                    "url": "/createTask",
+                    "description": "POST /createTask",
+                    "mimeType": "application/json"
+                },
+                "accepts": [
+                    {
+                        "scheme": "exact",
+                        "network": "eip155:8453",
+                        "payTo": "0xD73912BA30832328a3db96BeE73ebfaB58b7429f",
+                        "asset": "usdc",
+                        "amount": "10000",
+                        "maxTimeoutSeconds": 300,
+                        "extra": {}
+                    },
+                    {
+                        "scheme": "exact",
+                        "network": "eip155:43114",
+                        "payTo": "0xD73912BA30832328a3db96BeE73ebfaB58b7429f",
+                        "asset": "usdc",
+                        "amount": "10000",
+                        "maxTimeoutSeconds": 300,
+                        "extra": {}
+                    },
+                    {
+                        "scheme": "exact",
+                        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+                        "payTo": "9hw9Py9uMGtXRNpABZjifcK1t3suwzjyri9L9QYKg6zZ",
+                        "asset": "usdc",
+                        "amount": "10000",
+                        "maxTimeoutSeconds": 300,
+                        "extra": {}
+                    }
+                ],
+                "extensions": {
+                    "bazaar": {
+                        "info": {
+                            "input": {
+                                "type": "object",
+                                "properties": {},
+                                "additionalProperties": false
+                            },
+                            "output": {
+                                "type": "object",
+                                "additionalProperties": true
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "402": {
+                        "description": "Payment Required"
+                    }
+                }
+            }
+        },
+        "/getTaskResult": {
+            "post": {
+                "summary": "POST /getTaskResult",
+                "x-agentcash-auth": {
+                    "mode": "paid"
+                },
+                "x-payment-required": true,
+                "x-payment-info": {
+                    "protocols": [
+                        "x402"
+                    ],
+                    "pricingMode": "fixed",
+                    "price": "$0.00"
+                },
+                "x402Version": 2,
+                "resource": {
+                    "url": "/getTaskResult",
+                    "description": "POST /getTaskResult",
+                    "mimeType": "application/json"
+                },
+                "accepts": [
+                    {
+                        "scheme": "exact",
+                        "network": "eip155:8453",
+                        "payTo": "0xD73912BA30832328a3db96BeE73ebfaB58b7429f",
+                        "asset": "usdc",
+                        "amount": "1",
+                        "maxTimeoutSeconds": 300,
+                        "extra": {}
+                    },
+                    {
+                        "scheme": "exact",
+                        "network": "eip155:43114",
+                        "payTo": "0xD73912BA30832328a3db96BeE73ebfaB58b7429f",
+                        "asset": "usdc",
+                        "amount": "1",
+                        "maxTimeoutSeconds": 300,
+                        "extra": {}
+                    },
+                    {
+                        "scheme": "exact",
+                        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+                        "payTo": "9hw9Py9uMGtXRNpABZjifcK1t3suwzjyri9L9QYKg6zZ",
+                        "asset": "usdc",
+                        "amount": "1",
+                        "maxTimeoutSeconds": 300,
+                        "extra": {}
+                    }
+                ],
+                "extensions": {
+                    "bazaar": {
+                        "info": {
+                            "input": {
+                                "type": "object",
+                                "properties": {},
+                                "additionalProperties": false
+                            },
+                            "output": {
+                                "type": "object",
+                                "additionalProperties": true
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "402": {
+                        "description": "Payment Required"
+                    }
+                }
+            }
+        },
+        "/reportCorrect": {
+            "post": {
+                "summary": "POST /reportCorrect",
+                "x-agentcash-auth": {
+                    "mode": "paid"
+                },
+                "x-payment-required": true,
+                "x-payment-info": {
+                    "protocols": [
+                        "x402"
+                    ],
+                    "pricingMode": "fixed",
+                    "price": "$0.00"
+                },
+                "x402Version": 2,
+                "resource": {
+                    "url": "/reportCorrect",
+                    "description": "POST /reportCorrect",
+                    "mimeType": "application/json"
+                },
+                "accepts": [
+                    {
+                        "scheme": "exact",
+                        "network": "eip155:8453",
+                        "payTo": "0xD73912BA30832328a3db96BeE73ebfaB58b7429f",
+                        "asset": "usdc",
+                        "amount": "1",
+                        "maxTimeoutSeconds": 300,
+                        "extra": {}
+                    },
+                    {
+                        "scheme": "exact",
+                        "network": "eip155:43114",
+                        "payTo": "0xD73912BA30832328a3db96BeE73ebfaB58b7429f",
+                        "asset": "usdc",
+                        "amount": "1",
+                        "maxTimeoutSeconds": 300,
+                        "extra": {}
+                    },
+                    {
+                        "scheme": "exact",
+                        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+                        "payTo": "9hw9Py9uMGtXRNpABZjifcK1t3suwzjyri9L9QYKg6zZ",
+                        "asset": "usdc",
+                        "amount": "1",
+                        "maxTimeoutSeconds": 300,
+                        "extra": {}
+                    }
+                ],
+                "extensions": {
+                    "bazaar": {
+                        "info": {
+                            "input": {
+                                "type": "object",
+                                "properties": {},
+                                "additionalProperties": false
+                            },
+                            "output": {
+                                "type": "object",
+                                "additionalProperties": true
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "402": {
+                        "description": "Payment Required"
+                    }
+                }
+            }
+        },
+        "/reportIncorrect": {
+            "post": {
+                "summary": "POST /reportIncorrect",
+                "x-agentcash-auth": {
+                    "mode": "paid"
+                },
+                "x-payment-required": true,
+                "x-payment-info": {
+                    "protocols": [
+                        "x402"
+                    ],
+                    "pricingMode": "fixed",
+                    "price": "$0.00"
+                },
+                "x402Version": 2,
+                "resource": {
+                    "url": "/reportIncorrect",
+                    "description": "POST /reportIncorrect",
+                    "mimeType": "application/json"
+                },
+                "accepts": [
+                    {
+                        "scheme": "exact",
+                        "network": "eip155:8453",
+                        "payTo": "0xD73912BA30832328a3db96BeE73ebfaB58b7429f",
+                        "asset": "usdc",
+                        "amount": "1",
+                        "maxTimeoutSeconds": 300,
+                        "extra": {}
+                    },
+                    {
+                        "scheme": "exact",
+                        "network": "eip155:43114",
+                        "payTo": "0xD73912BA30832328a3db96BeE73ebfaB58b7429f",
+                        "asset": "usdc",
+                        "amount": "1",
+                        "maxTimeoutSeconds": 300,
+                        "extra": {}
+                    },
+                    {
+                        "scheme": "exact",
+                        "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+                        "payTo": "9hw9Py9uMGtXRNpABZjifcK1t3suwzjyri9L9QYKg6zZ",
+                        "asset": "usdc",
+                        "amount": "1",
+                        "maxTimeoutSeconds": 300,
+                        "extra": {}
+                    }
+                ],
+                "extensions": {
+                    "bazaar": {
+                        "info": {
+                            "input": {
+                                "type": "object",
+                                "properties": {},
+                                "additionalProperties": false
+                            },
+                            "output": {
+                                "type": "object",
+                                "additionalProperties": true
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "402": {
+                        "description": "Payment Required"
+                    }
+                }
+            }
+        }
+    },
+    "x402Version": 2,
+    "resource": {
+        "url": "/",
+        "description": "2Captcha CAPTCHA solving API â€” solves reCAPTCHA v2/v3, hCaptcha, Cloudflare Turnstile, FunCaptcha, GeeTest, image captchas, and more",
+        "mimeType": "application/json"
+    },
+    "accepts": [
+        {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "payTo": "0xD73912BA30832328a3db96BeE73ebfaB58b7429f",
+            "asset": "usdc",
+            "amount": "1",
+            "maxTimeoutSeconds": 300,
+            "extra": {}
+        },
+        {
+            "scheme": "exact",
+            "network": "eip155:43114",
+            "payTo": "0xD73912BA30832328a3db96BeE73ebfaB58b7429f",
+            "asset": "usdc",
+            "amount": "1",
+            "maxTimeoutSeconds": 300,
+            "extra": {}
+        },
+        {
+            "scheme": "exact",
+            "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+            "payTo": "9hw9Py9uMGtXRNpABZjifcK1t3suwzjyri9L9QYKg6zZ",
+            "asset": "usdc",
+            "amount": "1",
+            "maxTimeoutSeconds": 300,
+            "extra": {}
+        }
+    ],
+    "x-payment-accepts": [
+        {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "payTo": "0xD73912BA30832328a3db96BeE73ebfaB58b7429f"
+        },
+        {
+            "scheme": "exact",
+            "network": "eip155:43114",
+            "payTo": "0xD73912BA30832328a3db96BeE73ebfaB58b7429f"
+        },
+        {
+            "scheme": "exact",
+            "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+            "payTo": "9hw9Py9uMGtXRNpABZjifcK1t3suwzjyri9L9QYKg6zZ"
+        }
+    ]
+}
