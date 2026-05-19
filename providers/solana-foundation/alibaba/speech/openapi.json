@@ -27,7 +27,8 @@
             "required": [
               "file_url"
             ],
-            "type": "object"
+            "type": "object",
+            "description": "Audio submission envelope. Provide audio data per the upstream Alibaba ASR schema (typically a URL or base64-encoded payload under `input.audio` or `input.file_urls`)."
           },
           "model": {
             "enum": [
@@ -189,7 +190,8 @@
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Async task identifier returned by the original speech/audio submission. Poll this endpoint until the task completes."
           },
           {
             "$ref": "#/components/parameters/XDashScopeAsync"

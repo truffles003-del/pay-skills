@@ -52,7 +52,8 @@
                       {
                         "pattern": "^(?!.*--)"
                       }
-                    ]
+                    ],
+                    "description": "Mailbox username — the local-part before \"@\" — to operate on. 3–30 chars, lowercase alphanumeric and hyphens (the schema's pattern enforces this)."
                   },
                   "forwardTo": {
                     "anyOf": [
@@ -122,7 +123,8 @@
                 "properties": {
                   "messageId": {
                     "type": "string",
-                    "minLength": 1
+                    "minLength": 1,
+                    "description": "Message identifier returned by /api/inbox/messages, /api/subdomain/inbox/messages, or any send/forward/reply response. Used to read, delete, or reference a specific message."
                   }
                 },
                 "required": [
@@ -198,7 +200,8 @@
                   "subject": {
                     "type": "string",
                     "minLength": 1,
-                    "maxLength": 998
+                    "maxLength": 998,
+                    "description": "Email subject line. 1–998 chars (RFC 2822 single-line limit)."
                   },
                   "html": {
                     "type": "string",
@@ -221,17 +224,20 @@
                       "properties": {
                         "content": {
                           "type": "string",
-                          "maxLength": 5000000
+                          "maxLength": 5000000,
+                          "description": "Base64-encoded file bytes. Decoded limit ~3.75 MB per attachment."
                         },
                         "contentType": {
                           "type": "string",
                           "minLength": 1,
-                          "maxLength": 255
+                          "maxLength": 255,
+                          "description": "MIME type of the attachment (e.g. \"application/pdf\", \"image/png\"). For calendar invites use \"text/calendar; method=REQUEST\"."
                         },
                         "filename": {
                           "type": "string",
                           "minLength": 1,
-                          "maxLength": 255
+                          "maxLength": 255,
+                          "description": "Filename presented in the email (with extension, e.g. \"invoice.pdf\")."
                         }
                       },
                       "required": [
@@ -302,7 +308,8 @@
                       {
                         "pattern": "^(?!.*--)"
                       }
-                    ]
+                    ],
+                    "description": "Custom subdomain — the label before \"stableemail.dev\" — to operate on (e.g. \"yourname\" for yourname.stableemail.dev). 3–30 chars, lowercase alphanumeric and hyphens."
                   }
                 },
                 "required": [
@@ -383,7 +390,8 @@
                   "subject": {
                     "type": "string",
                     "minLength": 1,
-                    "maxLength": 998
+                    "maxLength": 998,
+                    "description": "Email subject line. 1–998 chars (RFC 2822 single-line limit)."
                   },
                   "html": {
                     "type": "string",
@@ -406,17 +414,20 @@
                       "properties": {
                         "content": {
                           "type": "string",
-                          "maxLength": 5000000
+                          "maxLength": 5000000,
+                          "description": "Base64-encoded file bytes. Decoded limit ~3.75 MB per attachment."
                         },
                         "contentType": {
                           "type": "string",
                           "minLength": 1,
-                          "maxLength": 255
+                          "maxLength": 255,
+                          "description": "MIME type of the attachment (e.g. \"application/pdf\", \"image/png\"). For calendar invites use \"text/calendar; method=REQUEST\"."
                         },
                         "filename": {
                           "type": "string",
                           "minLength": 1,
-                          "maxLength": 255
+                          "maxLength": 255,
+                          "description": "Filename presented in the email (with extension, e.g. \"invoice.pdf\")."
                         }
                       },
                       "required": [
@@ -488,7 +499,8 @@
                       {
                         "pattern": "^(?!.*--)"
                       }
-                    ]
+                    ],
+                    "description": "Mailbox username — the local-part before \"@\" — to operate on. 3–30 chars, lowercase alphanumeric and hyphens (the schema's pattern enforces this)."
                   },
                   "forwardTo": {
                     "type": "string",
@@ -555,7 +567,8 @@
                       {
                         "pattern": "^(?!.*--)"
                       }
-                    ]
+                    ],
+                    "description": "Mailbox username — the local-part before \"@\" — to operate on. 3–30 chars, lowercase alphanumeric and hyphens (the schema's pattern enforces this)."
                   },
                   "to": {
                     "minItems": 1,
@@ -580,7 +593,8 @@
                   "subject": {
                     "type": "string",
                     "minLength": 1,
-                    "maxLength": 998
+                    "maxLength": 998,
+                    "description": "Email subject line. 1–998 chars (RFC 2822 single-line limit)."
                   },
                   "html": {
                     "type": "string",
@@ -603,17 +617,20 @@
                       "properties": {
                         "content": {
                           "type": "string",
-                          "maxLength": 5000000
+                          "maxLength": 5000000,
+                          "description": "Base64-encoded file bytes. Decoded limit ~3.75 MB per attachment."
                         },
                         "contentType": {
                           "type": "string",
                           "minLength": 1,
-                          "maxLength": 255
+                          "maxLength": 255,
+                          "description": "MIME type of the attachment (e.g. \"application/pdf\", \"image/png\"). For calendar invites use \"text/calendar; method=REQUEST\"."
                         },
                         "filename": {
                           "type": "string",
                           "minLength": 1,
-                          "maxLength": 255
+                          "maxLength": 255,
+                          "description": "Filename presented in the email (with extension, e.g. \"invoice.pdf\")."
                         }
                       },
                       "required": [
@@ -685,7 +702,8 @@
                       {
                         "pattern": "^(?!.*--)"
                       }
-                    ]
+                    ],
+                    "description": "Mailbox username — the local-part before \"@\" — to operate on. 3–30 chars, lowercase alphanumeric and hyphens (the schema's pattern enforces this)."
                   }
                 },
                 "required": [
@@ -747,7 +765,8 @@
                       {
                         "pattern": "^(?!.*--)"
                       }
-                    ]
+                    ],
+                    "description": "Mailbox username — the local-part before \"@\" — to operate on. 3–30 chars, lowercase alphanumeric and hyphens (the schema's pattern enforces this)."
                   }
                 },
                 "required": [
@@ -809,7 +828,8 @@
                       {
                         "pattern": "^(?!.*--)"
                       }
-                    ]
+                    ],
+                    "description": "Mailbox username — the local-part before \"@\" — to operate on. 3–30 chars, lowercase alphanumeric and hyphens (the schema's pattern enforces this)."
                   }
                 },
                 "required": [
@@ -871,7 +891,8 @@
                       {
                         "pattern": "^(?!.*--)"
                       }
-                    ]
+                    ],
+                    "description": "Mailbox username — the local-part before \"@\" — to operate on. 3–30 chars, lowercase alphanumeric and hyphens (the schema's pattern enforces this)."
                   },
                   "cursor": {
                     "type": "string",
@@ -943,7 +964,8 @@
                       {
                         "pattern": "^(?!.*--)"
                       }
-                    ]
+                    ],
+                    "description": "Custom subdomain — the label before \"stableemail.dev\" — to operate on (e.g. \"yourname\" for yourname.stableemail.dev). 3–30 chars, lowercase alphanumeric and hyphens."
                   },
                   "localPart": {
                     "type": "string",
@@ -1017,7 +1039,8 @@
                       {
                         "pattern": "^(?!.*--)"
                       }
-                    ]
+                    ],
+                    "description": "Custom subdomain — the label before \"stableemail.dev\" — to operate on (e.g. \"yourname\" for yourname.stableemail.dev). 3–30 chars, lowercase alphanumeric and hyphens."
                   },
                   "localPart": {
                     "type": "string",
@@ -1089,7 +1112,8 @@
                 "properties": {
                   "messageId": {
                     "type": "string",
-                    "minLength": 1
+                    "minLength": 1,
+                    "description": "Message identifier returned by /api/inbox/messages, /api/subdomain/inbox/messages, or any send/forward/reply response. Used to read, delete, or reference a specific message."
                   }
                 },
                 "required": [
@@ -1129,7 +1153,8 @@
               "type": "string",
               "minLength": 1
             },
-            "required": true
+            "required": true,
+            "description": "Subdomain to check the registration/DNS status for (without the apex). 3–30 chars, lowercase alphanumeric and hyphens."
           }
         ],
         "responses": {
@@ -1177,7 +1202,8 @@
                       {
                         "pattern": "^(?!.*--)"
                       }
-                    ]
+                    ],
+                    "description": "Custom subdomain — the label before \"stableemail.dev\" — to operate on (e.g. \"yourname\" for yourname.stableemail.dev). 3–30 chars, lowercase alphanumeric and hyphens."
                   },
                   "walletAddress": {
                     "type": "string",
@@ -1231,7 +1257,8 @@
                       {
                         "pattern": "^(?!.*--)"
                       }
-                    ]
+                    ],
+                    "description": "Custom subdomain — the label before \"stableemail.dev\" — to operate on (e.g. \"yourname\" for yourname.stableemail.dev). 3–30 chars, lowercase alphanumeric and hyphens."
                   },
                   "catchAllForwardTo": {
                     "anyOf": [
@@ -1283,7 +1310,8 @@
               "type": "string",
               "minLength": 1
             },
-            "required": true
+            "required": true,
+            "description": "Mailbox username to check the status for (the local-part before \"@\"). 3–30 chars, lowercase alphanumeric and hyphens."
           }
         ],
         "responses": {
@@ -1324,7 +1352,8 @@
                       {
                         "pattern": "^(?!.*--)"
                       }
-                    ]
+                    ],
+                    "description": "Mailbox username — the local-part before \"@\" — to operate on. 3–30 chars, lowercase alphanumeric and hyphens (the schema's pattern enforces this)."
                   },
                   "refundAddress": {
                     "type": "string",
@@ -1369,7 +1398,8 @@
                 "properties": {
                   "messageId": {
                     "type": "string",
-                    "minLength": 1
+                    "minLength": 1,
+                    "description": "Message identifier returned by /api/inbox/messages, /api/subdomain/inbox/messages, or any send/forward/reply response. Used to read, delete, or reference a specific message."
                   }
                 },
                 "required": [
@@ -1417,7 +1447,8 @@
                       {
                         "pattern": "^(?!.*--)"
                       }
-                    ]
+                    ],
+                    "description": "Custom subdomain — the label before \"stableemail.dev\" — to operate on (e.g. \"yourname\" for yourname.stableemail.dev). 3–30 chars, lowercase alphanumeric and hyphens."
                   }
                 },
                 "required": [
@@ -1465,7 +1496,8 @@
                       {
                         "pattern": "^(?!.*--)"
                       }
-                    ]
+                    ],
+                    "description": "Custom subdomain — the label before \"stableemail.dev\" — to operate on (e.g. \"yourname\" for yourname.stableemail.dev). 3–30 chars, lowercase alphanumeric and hyphens."
                   },
                   "localPart": {
                     "type": "string",
@@ -1520,7 +1552,8 @@
                       {
                         "pattern": "^(?!.*--)"
                       }
-                    ]
+                    ],
+                    "description": "Custom subdomain — the label before \"stableemail.dev\" — to operate on (e.g. \"yourname\" for yourname.stableemail.dev). 3–30 chars, lowercase alphanumeric and hyphens."
                   },
                   "localPart": {
                     "type": "string",
@@ -1583,7 +1616,8 @@
                 "properties": {
                   "messageId": {
                     "type": "string",
-                    "minLength": 1
+                    "minLength": 1,
+                    "description": "Message identifier returned by /api/inbox/messages, /api/subdomain/inbox/messages, or any send/forward/reply response. Used to read, delete, or reference a specific message."
                   }
                 },
                 "required": [

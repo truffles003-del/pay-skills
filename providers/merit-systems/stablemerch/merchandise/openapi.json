@@ -94,16 +94,19 @@
                     "properties": {
                       "first_name": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "description": "Recipient first name."
                       },
                       "last_name": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "description": "Recipient last name."
                       },
                       "email": {
                         "type": "string",
                         "format": "email",
-                        "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
+                        "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$",
+                        "description": "Recipient email for shipment notifications."
                       },
                       "phone": {
                         "default": "",
@@ -113,15 +116,18 @@
                       },
                       "country": {
                         "type": "string",
-                        "pattern": "^[A-Z]{2}$"
+                        "pattern": "^[A-Z]{2}$",
+                        "description": "ISO 3166-1 alpha-2 country code (e.g. \"US\", \"DE\")."
                       },
                       "region": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "description": "State, province, or region. For US use the 2-letter code (e.g. \"CA\")."
                       },
                       "address1": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "description": "Primary street address line."
                       },
                       "address2": {
                         "default": "",
@@ -129,11 +135,13 @@
                       },
                       "city": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "description": "City of the recipient."
                       },
                       "zip": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "description": "Postal or ZIP code."
                       }
                     },
                     "required": [
@@ -145,7 +153,8 @@
                       "address1",
                       "city",
                       "zip"
-                    ]
+                    ],
+                    "description": "Recipient shipping address. The fulfillment provider ships the printed item to this address. `country` is ISO 3166-1 alpha-2 (e.g. \"US\"); `region` is state/province; `zip` is the postal code."
                   },
                   "commission_address": {
                     "description": "EVM address to receive the commission. Must be provided together with commission_rate.",
@@ -336,16 +345,19 @@
                     "properties": {
                       "first_name": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "description": "Recipient first name."
                       },
                       "last_name": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "description": "Recipient last name."
                       },
                       "email": {
                         "type": "string",
                         "format": "email",
-                        "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
+                        "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$",
+                        "description": "Recipient email for shipment notifications."
                       },
                       "phone": {
                         "default": "",
@@ -355,15 +367,18 @@
                       },
                       "country": {
                         "type": "string",
-                        "pattern": "^[A-Z]{2}$"
+                        "pattern": "^[A-Z]{2}$",
+                        "description": "ISO 3166-1 alpha-2 country code (e.g. \"US\", \"DE\")."
                       },
                       "region": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "description": "State, province, or region. For US use the 2-letter code (e.g. \"CA\")."
                       },
                       "address1": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "description": "Primary street address line."
                       },
                       "address2": {
                         "default": "",
@@ -371,11 +386,13 @@
                       },
                       "city": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "description": "City of the recipient."
                       },
                       "zip": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "description": "Postal or ZIP code."
                       }
                     },
                     "required": [
@@ -387,7 +404,8 @@
                       "address1",
                       "city",
                       "zip"
-                    ]
+                    ],
+                    "description": "Recipient shipping address. The fulfillment provider ships the printed item to this address. `country` is ISO 3166-1 alpha-2 (e.g. \"US\"); `region` is state/province; `zip` is the postal code."
                   },
                   "commission_address": {
                     "description": "EVM address to receive the commission. Must be provided together with commission_rate.",
@@ -527,16 +545,19 @@
                     "properties": {
                       "first_name": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "description": "Recipient first name."
                       },
                       "last_name": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "description": "Recipient last name."
                       },
                       "email": {
                         "type": "string",
                         "format": "email",
-                        "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
+                        "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$",
+                        "description": "Recipient email for shipment notifications."
                       },
                       "phone": {
                         "default": "",
@@ -546,15 +567,18 @@
                       },
                       "country": {
                         "type": "string",
-                        "pattern": "^[A-Z]{2}$"
+                        "pattern": "^[A-Z]{2}$",
+                        "description": "ISO 3166-1 alpha-2 country code (e.g. \"US\", \"DE\")."
                       },
                       "region": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "description": "State, province, or region. For US use the 2-letter code (e.g. \"CA\")."
                       },
                       "address1": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "description": "Primary street address line."
                       },
                       "address2": {
                         "default": "",
@@ -562,11 +586,13 @@
                       },
                       "city": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "description": "City of the recipient."
                       },
                       "zip": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "description": "Postal or ZIP code."
                       }
                     },
                     "required": [
@@ -578,7 +604,8 @@
                       "address1",
                       "city",
                       "zip"
-                    ]
+                    ],
+                    "description": "Recipient shipping address. The fulfillment provider ships the printed item to this address. `country` is ISO 3166-1 alpha-2 (e.g. \"US\"); `region` is state/province; `zip` is the postal code."
                   },
                   "commission_address": {
                     "description": "EVM address to receive the commission. Must be provided together with commission_rate.",

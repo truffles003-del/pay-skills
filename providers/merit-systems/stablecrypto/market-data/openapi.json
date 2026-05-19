@@ -1192,7 +1192,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {}
+                "properties": {},
+                "additionalProperties": false,
+                "description": "This endpoint takes no parameters; send an empty JSON object `{}` as the body.",
+                "example": {}
               }
             }
           }
@@ -1288,7 +1291,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {}
+                "properties": {},
+                "additionalProperties": false,
+                "description": "This endpoint takes no parameters; send an empty JSON object `{}` as the body.",
+                "example": {}
               }
             }
           }
@@ -3135,7 +3141,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {}
+                "properties": {},
+                "additionalProperties": false,
+                "description": "This endpoint takes no parameters; send an empty JSON object `{}` as the body.",
+                "example": {}
               }
             }
           }
@@ -3324,7 +3333,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {}
+                "properties": {},
+                "additionalProperties": false,
+                "description": "This endpoint takes no parameters; send an empty JSON object `{}` as the body.",
+                "example": {}
               }
             }
           }
@@ -4104,7 +4116,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {}
+                "properties": {},
+                "additionalProperties": false,
+                "description": "This endpoint takes no parameters; send an empty JSON object `{}` as the body.",
+                "example": {}
               }
             }
           }
@@ -4577,7 +4592,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {}
+                "properties": {},
+                "additionalProperties": false,
+                "description": "This endpoint takes no parameters; send an empty JSON object `{}` as the body.",
+                "example": {}
               }
             }
           }
@@ -4731,7 +4749,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {}
+                "properties": {},
+                "additionalProperties": false,
+                "description": "This endpoint takes no parameters; send an empty JSON object `{}` as the body.",
+                "example": {}
               }
             }
           }
@@ -4804,7 +4825,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {}
+                "properties": {},
+                "additionalProperties": false,
+                "description": "This endpoint takes no parameters; send an empty JSON object `{}` as the body.",
+                "example": {}
               }
             }
           }
@@ -4874,7 +4898,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {}
+                "properties": {},
+                "additionalProperties": false,
+                "description": "This endpoint takes no parameters; send an empty JSON object `{}` as the body.",
+                "example": {}
               }
             }
           }
@@ -4944,7 +4971,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {}
+                "properties": {},
+                "additionalProperties": false,
+                "description": "This endpoint takes no parameters; send an empty JSON object `{}` as the body.",
+                "example": {}
               }
             }
           }
@@ -5071,7 +5101,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {}
+                "properties": {},
+                "additionalProperties": false,
+                "description": "This endpoint takes no parameters; send an empty JSON object `{}` as the body.",
+                "example": {}
               }
             }
           }
@@ -5132,7 +5165,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {}
+                "properties": {},
+                "additionalProperties": false,
+                "description": "This endpoint takes no parameters; send an empty JSON object `{}` as the body.",
+                "example": {}
               }
             }
           }
@@ -5190,7 +5226,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {}
+                "properties": {},
+                "additionalProperties": false,
+                "description": "This endpoint takes no parameters; send an empty JSON object `{}` as the body.",
+                "example": {}
               }
             }
           }
@@ -5248,7 +5287,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {}
+                "properties": {},
+                "additionalProperties": false,
+                "description": "This endpoint takes no parameters; send an empty JSON object `{}` as the body.",
+                "example": {}
               }
             }
           }
@@ -5309,7 +5351,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {}
+                "properties": {},
+                "additionalProperties": false,
+                "description": "This endpoint takes no parameters; send an empty JSON object `{}` as the body.",
+                "example": {}
               }
             }
           }
@@ -5379,7 +5424,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {}
+                "properties": {},
+                "additionalProperties": false,
+                "description": "This endpoint takes no parameters; send an empty JSON object `{}` as the body.",
+                "example": {}
               }
             }
           }
@@ -5437,7 +5485,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {}
+                "properties": {},
+                "additionalProperties": false,
+                "description": "This endpoint takes no parameters; send an empty JSON object `{}` as the body.",
+                "example": {}
               }
             }
           }
@@ -5791,7 +5842,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {}
+                "properties": {},
+                "additionalProperties": false,
+                "description": "This endpoint takes no parameters; send an empty JSON object `{}` as the body.",
+                "example": {}
               }
             }
           }

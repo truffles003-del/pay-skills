@@ -598,7 +598,8 @@
             "required": false,
             "schema": {
               "type": "boolean"
-            }
+            },
+            "description": "If true, include the main-text snippet in each hit."
           },
           {
             "in": "query",
@@ -606,7 +607,8 @@
             "required": false,
             "schema": {
               "type": "boolean"
-            }
+            },
+            "description": "If true, include the markdown-formatted text in each hit."
           },
           {
             "in": "query",
@@ -614,7 +616,8 @@
             "required": false,
             "schema": {
               "type": "boolean"
-            }
+            },
+            "description": "If true, include the summary text in each hit."
           },
           {
             "in": "query",
@@ -622,7 +625,8 @@
             "required": false,
             "schema": {
               "type": "boolean"
-            }
+            },
+            "description": "If true, rerank retrieval results with the configured reranker."
           },
           {
             "in": "query",
@@ -630,7 +634,8 @@
             "required": false,
             "schema": {
               "type": "boolean"
-            }
+            },
+            "description": "If true, include the rich (formatted) main body in each hit."
           },
           {
             "in": "query",
@@ -639,7 +644,8 @@
             "schema": {
               "additionalProperties": true,
               "type": "object"
-            }
+            },
+            "description": "JSON-encoded advanced search controls (per Alibaba IQS docs)."
           }
         ],
         "responses": {

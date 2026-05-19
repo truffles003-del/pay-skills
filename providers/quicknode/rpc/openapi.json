@@ -253,7 +253,8 @@
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "QuickNode SQL cluster identifier. Use the cluster ID listed in your QuickNode dashboard or returned by /sql/rest/v1/clusters."
           }
         ],
         "responses": {
@@ -301,7 +302,9 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object"
+                "type": "object",
+                "description": "Pass the SQL query and any parameters as JSON; consult QuickNode SQL docs for the body shape (`{ \"query\": \"...\", \"params\": {...} }`).",
+                "additionalProperties": true
               }
             }
           }
@@ -352,7 +355,8 @@
               "type": "integer",
               "default": 50,
               "maximum": 200
-            }
+            },
+            "description": "Max number of resources to return per page. Defaults to a provider-set value when omitted."
           },
           {
             "name": "offset",
@@ -360,7 +364,8 @@
             "schema": {
               "type": "integer",
               "default": 0
-            }
+            },
+            "description": "Zero-based offset into the result set; use with `limit` to page."
           }
         ],
         "responses": {

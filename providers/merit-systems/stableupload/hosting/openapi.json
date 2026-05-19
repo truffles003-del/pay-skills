@@ -924,7 +924,8 @@
                 "properties": {
                   "uploadId": {
                     "type": "string",
-                    "minLength": 1
+                    "minLength": 1,
+                    "description": "Upload identifier returned by POST /api/site (or other upload endpoints). Pass to bind a custom domain to that upload, query its status, or detach the domain."
                   },
                   "hostname": {
                     "type": "string",
@@ -1019,7 +1020,8 @@
                 "properties": {
                   "uploadId": {
                     "type": "string",
-                    "minLength": 1
+                    "minLength": 1,
+                    "description": "Upload identifier returned by POST /api/site (or other upload endpoints). Pass to bind a custom domain to that upload, query its status, or detach the domain."
                   }
                 },
                 "required": [
@@ -1148,7 +1150,8 @@
               "type": "string",
               "minLength": 1
             },
-            "required": true
+            "required": true,
+            "description": "Upload identifier returned by POST /api/site (or other upload endpoints). Pass to bind a custom domain to that upload, query its status, or detach the domain."
           }
         ],
         "responses": {

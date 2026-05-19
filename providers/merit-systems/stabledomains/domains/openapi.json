@@ -62,7 +62,8 @@
                 "type": "object",
                 "properties": {
                   "domain": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Domain name to look up or operate on, in DNS form (e.g. \"example.com\"). Must include the apex; do not include scheme or trailing slash."
                   }
                 },
                 "required": [
@@ -195,7 +196,8 @@
                 "type": "object",
                 "properties": {
                   "domain": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Domain name to look up or operate on, in DNS form (e.g. \"example.com\"). Must include the apex; do not include scheme or trailing slash."
                   },
                   "notificationEmail": {
                     "type": "string",
@@ -297,7 +299,8 @@
                 "type": "object",
                 "properties": {
                   "domain": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Domain name to look up or operate on, in DNS form (e.g. \"example.com\"). Must include the apex; do not include scheme or trailing slash."
                   },
                   "count": {
                     "default": 1,
@@ -393,7 +396,8 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Domain name to look up or operate on, in DNS form (e.g. \"example.com\"). Must include the apex; do not include scheme or trailing slash."
           }
         ],
         "responses": {
@@ -425,7 +429,8 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Domain name to look up or operate on, in DNS form (e.g. \"example.com\"). Must include the apex; do not include scheme or trailing slash."
           }
         ],
         "responses": {
@@ -456,7 +461,8 @@
                 "type": "object",
                 "properties": {
                   "domain": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Domain name to look up or operate on, in DNS form (e.g. \"example.com\"). Must include the apex; do not include scheme or trailing slash."
                   },
                   "action": {
                     "type": "string",
@@ -472,13 +478,16 @@
                       "type": "object",
                       "properties": {
                         "type": {
-                          "type": "string"
+                          "type": "string",
+                          "description": "DNS record type (e.g. \"A\", \"AAAA\", \"CNAME\", \"MX\", \"TXT\")."
                         },
                         "name": {
-                          "type": "string"
+                          "type": "string",
+                          "description": "Record name. Use \"@\" for the apex, or the subdomain label (e.g. \"www\", \"mail\")."
                         },
                         "value": {
-                          "type": "string"
+                          "type": "string",
+                          "description": "Record value. For A: IPv4 address. For CNAME: target hostname. For TXT: quoted string. Format depends on `type`."
                         },
                         "ttl": {
                           "type": "number"
@@ -489,7 +498,8 @@
                         "name",
                         "value"
                       ]
-                    }
+                    },
+                    "description": "One or more DNS records to upsert or delete on the domain."
                   }
                 },
                 "required": [
@@ -531,7 +541,8 @@
                 "type": "object",
                 "properties": {
                   "domain": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Domain name to look up or operate on, in DNS form (e.g. \"example.com\"). Must include the apex; do not include scheme or trailing slash."
                   }
                 },
                 "required": [

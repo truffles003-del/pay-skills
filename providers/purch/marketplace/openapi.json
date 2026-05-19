@@ -432,7 +432,8 @@
             "example": "B0CXYZ1234"
           },
           "shippingAddress": {
-            "$ref": "#/components/schemas/ShippingAddress"
+            "$ref": "#/components/schemas/ShippingAddress",
+            "description": "Recipient shipping address for the order. Provide all postal fields per the inner schema (name, street, city, region, postal code, country)."
           },
           "email": {
             "type": "string",
@@ -1597,7 +1598,7 @@
         }
       }
     },
-    "/x402/vault/download/:purchaseId": {
+    "/x402/vault/download/{purchaseId}": {
       "get": {
         "tags": [
           "Vault"

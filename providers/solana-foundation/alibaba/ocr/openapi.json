@@ -99,7 +99,8 @@
           {
             "properties": {
               "text": {
-                "type": "string"
+                "type": "string",
+                "description": "UTF-8 text content (for `type: text` content parts)."
               },
               "type": {
                 "enum": [
@@ -123,13 +124,15 @@
                 "properties": {
                   "url": {
                     "format": "uri",
-                    "type": "string"
+                    "type": "string",
+                    "description": "Image URL — either an HTTPS URL or a base64 data: URL (e.g. `data:image/png;base64,...`)."
                   }
                 },
                 "required": [
                   "url"
                 ],
-                "type": "object"
+                "type": "object",
+                "description": "Image input wrapper (for `type: image_url` content parts). Contains a `url` (HTTPS or base64 data URL)."
               },
               "max_pixels": {
                 "type": "integer"
@@ -158,7 +161,8 @@
             "items": {
               "$ref": "#/components/schemas/OcrContentPart"
             },
-            "type": "array"
+            "type": "array",
+            "description": "Multi-part message content: an array of parts, each either text (`type: text`) or image (`type: image_url`)."
           },
           "role": {
             "enum": [
@@ -180,7 +184,8 @@
               "$ref": "#/components/schemas/OcrMessage"
             },
             "minItems": 1,
-            "type": "array"
+            "type": "array",
+            "description": "OpenAI-compatible chat-completions message list. For OCR, pass the image (URL or base64) in the latest `role: user` message content."
           },
           "model": {
             "enum": [

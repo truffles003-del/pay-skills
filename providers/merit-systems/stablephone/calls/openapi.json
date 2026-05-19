@@ -62,7 +62,8 @@
                 "properties": {
                   "phone_number": {
                     "type": "string",
-                    "pattern": "^\\+1\\d{10}$"
+                    "pattern": "^\\+1\\d{10}$",
+                    "description": "Recipient phone number in E.164 format. The schema's pattern constrains to US numbers: `+1` followed by 10 digits (e.g. \"+14155551212\")."
                   }
                 },
                 "required": [
@@ -143,7 +144,8 @@
                 "properties": {
                   "phone_number": {
                     "type": "string",
-                    "pattern": "^\\+1\\d{10}$"
+                    "pattern": "^\\+1\\d{10}$",
+                    "description": "Recipient phone number in E.164 format. The schema's pattern constrains to US numbers: `+1` followed by 10 digits (e.g. \"+14155551212\")."
                   }
                 },
                 "required": [
@@ -301,7 +303,8 @@
                 "properties": {
                   "phone_number": {
                     "type": "string",
-                    "pattern": "^\\+1\\d{10}$"
+                    "pattern": "^\\+1\\d{10}$",
+                    "description": "Recipient phone number in E.164 format. The schema's pattern constrains to US numbers: `+1` followed by 10 digits (e.g. \"+14155551212\")."
                   },
                   "from": {
                     "type": "string",
@@ -310,7 +313,8 @@
                   "task": {
                     "type": "string",
                     "minLength": 1,
-                    "maxLength": 4000
+                    "maxLength": 4000,
+                    "description": "Natural-language instruction for the AI caller — what the call should accomplish (e.g. \"Confirm my Tuesday 3pm appointment\"). The agent on the line will speak this objective to the recipient."
                   },
                   "first_sentence": {
                     "type": "string",
@@ -469,7 +473,8 @@
               "type": "string",
               "minLength": 1
             },
-            "required": true
+            "required": true,
+            "description": "Lookup token returned by POST /api/lookup. Use it to poll for iMessage/FaceTime status results."
           }
         ],
         "responses": {

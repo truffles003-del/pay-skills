@@ -52,7 +52,8 @@
       "ChatMessage": {
         "properties": {
           "content": {
-            "type": "string"
+            "type": "string",
+            "description": "Message content. For OpenAI-compatible chat completions, this is the prompt or response text. Required."
           },
           "role": {
             "enum": [
@@ -115,7 +116,8 @@
             },
             "maxItems": 1,
             "minItems": 1,
-            "type": "array"
+            "type": "array",
+            "description": "OpenAI-compatible chat-completions message list. The translation model treats the latest `role: user` message as the source text."
           },
           "model": {
             "enum": [
@@ -130,7 +132,8 @@
             "type": "boolean"
           },
           "translation_options": {
-            "$ref": "#/components/schemas/TranslationOptions"
+            "$ref": "#/components/schemas/TranslationOptions",
+            "description": "Translation-specific options envelope."
           }
         },
         "required": [
@@ -150,7 +153,8 @@
             "type": "string"
           },
           "target_lang": {
-            "type": "string"
+            "type": "string",
+            "description": "Target language code (e.g. \"en\", \"zh\", \"ja\", \"fr\")."
           },
           "tm_list": {
             "items": {

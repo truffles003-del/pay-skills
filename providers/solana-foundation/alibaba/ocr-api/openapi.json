@@ -5273,7 +5273,8 @@
             "required": false,
             "schema": {
               "type": "boolean"
-            }
+            },
+            "description": "If true, route the recognition through Alibaba's LLM-augmented OCR pipeline (slower, higher accuracy)."
           }
         ],
         "requestBody": {

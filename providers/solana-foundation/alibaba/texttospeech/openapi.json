@@ -15,17 +15,20 @@
                 "type": "boolean"
               },
               "text": {
-                "type": "string"
+                "type": "string",
+                "description": "UTF-8 text to synthesize into speech."
               },
               "voice": {
-                "type": "string"
+                "type": "string",
+                "description": "Voice identifier (e.g. CosyVoice voice ID)."
               }
             },
             "required": [
               "text",
               "voice"
             ],
-            "type": "object"
+            "type": "object",
+            "description": "TTS inputs. `input.text` is the text to read aloud; `input.voice` selects the voice (Alibaba CosyVoice voice IDs)."
           },
           "model": {
             "enum": [

@@ -697,7 +697,8 @@
               "type": "string",
               "title": "Api Request"
             },
-            "required": true
+            "required": true,
+            "description": "Async Sonar request identifier returned by the corresponding POST submission. Poll until the request status is terminal."
           }
         ],
         "description": "Retrieve the response for a given asynchronous chat completion request.",

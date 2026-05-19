@@ -35,7 +35,8 @@
                 "maxItems": 10,
                 "type": "array"
               }
-            ]
+            ],
+            "description": "Text (single string) or list of texts to embed."
           },
           "model": {
             "enum": [

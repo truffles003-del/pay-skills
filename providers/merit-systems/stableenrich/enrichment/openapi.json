@@ -94,7 +94,8 @@
               "type": "string",
               "minLength": 1
             },
-            "required": true
+            "required": true,
+            "description": "Google Places API place identifier (e.g. \"ChIJN1t_tDeuEmsRUsoyG83frY4\"). Obtain it from a prior text/nearby search."
           },
           {
             "in": "query",
@@ -114,7 +115,8 @@
                   "type": "string"
                 }
               ]
-            }
+            },
+            "description": "Comma-separated list of place-detail fields to omit from the response (e.g. \"photos,reviews\"). Useful to cut payload size and cost when those fields aren't needed."
           },
           {
             "in": "query",
@@ -122,7 +124,8 @@
             "schema": {
               "default": "en",
               "type": "string"
-            }
+            },
+            "description": "BCP-47 language tag for localized place names and reviews (e.g. \"en\", \"fr\", \"ja-JP\"). Defaults to \"en\"."
           }
         ],
         "responses": {
@@ -5319,7 +5322,8 @@
                 "properties": {
                   "textQuery": {
                     "type": "string",
-                    "minLength": 1
+                    "minLength": 1,
+                    "description": "Free-text search query (e.g. \"sushi restaurants near Union Square\"). The Maps Places API parses this for intent."
                   },
                   "excludeFields": {
                     "default": [
@@ -5343,27 +5347,32 @@
                             "type": "object",
                             "properties": {
                               "latitude": {
-                                "type": "number"
+                                "type": "number",
+                                "description": "Latitude in decimal degrees (WGS-84). Range -90 to 90."
                               },
                               "longitude": {
-                                "type": "number"
+                                "type": "number",
+                                "description": "Longitude in decimal degrees (WGS-84). Range -180 to 180."
                               }
                             },
                             "required": [
                               "latitude",
                               "longitude"
-                            ]
+                            ],
+                            "description": "Center point of the circular region (latitude, longitude in WGS-84)."
                           },
                           "radius": {
                             "type": "number",
                             "minimum": 0,
-                            "maximum": 50000
+                            "maximum": 50000,
+                            "description": "Radius of the circular region in meters."
                           }
                         },
                         "required": [
                           "center",
                           "radius"
-                        ]
+                        ],
+                        "description": "Circular region with `center` (lat/lng) and `radius` in meters."
                       }
                     },
                     "required": [
@@ -5958,7 +5967,8 @@
                 "properties": {
                   "textQuery": {
                     "type": "string",
-                    "minLength": 1
+                    "minLength": 1,
+                    "description": "Free-text search query (e.g. \"sushi restaurants near Union Square\"). The Maps Places API parses this for intent."
                   },
                   "excludeFields": {
                     "default": [
@@ -5982,27 +5992,32 @@
                             "type": "object",
                             "properties": {
                               "latitude": {
-                                "type": "number"
+                                "type": "number",
+                                "description": "Latitude in decimal degrees (WGS-84). Range -90 to 90."
                               },
                               "longitude": {
-                                "type": "number"
+                                "type": "number",
+                                "description": "Longitude in decimal degrees (WGS-84). Range -180 to 180."
                               }
                             },
                             "required": [
                               "latitude",
                               "longitude"
-                            ]
+                            ],
+                            "description": "Center point of the circular region (latitude, longitude in WGS-84)."
                           },
                           "radius": {
                             "type": "number",
                             "minimum": 0,
-                            "maximum": 50000
+                            "maximum": 50000,
+                            "description": "Radius of the circular region in meters."
                           }
                         },
                         "required": [
                           "center",
                           "radius"
-                        ]
+                        ],
+                        "description": "Circular region with `center` (lat/lng) and `radius` in meters."
                       }
                     },
                     "required": [
@@ -6614,32 +6629,38 @@
                             "type": "object",
                             "properties": {
                               "latitude": {
-                                "type": "number"
+                                "type": "number",
+                                "description": "Latitude in decimal degrees (WGS-84). Range -90 to 90."
                               },
                               "longitude": {
-                                "type": "number"
+                                "type": "number",
+                                "description": "Longitude in decimal degrees (WGS-84). Range -180 to 180."
                               }
                             },
                             "required": [
                               "latitude",
                               "longitude"
-                            ]
+                            ],
+                            "description": "Center point of the circular region (latitude, longitude in WGS-84)."
                           },
                           "radius": {
                             "type": "number",
                             "minimum": 0,
-                            "maximum": 50000
+                            "maximum": 50000,
+                            "description": "Radius of the circular region in meters."
                           }
                         },
                         "required": [
                           "center",
                           "radius"
-                        ]
+                        ],
+                        "description": "Circular region with `center` (lat/lng) and `radius` in meters."
                       }
                     },
                     "required": [
                       "circle"
-                    ]
+                    ],
+                    "description": "Hard restriction to results inside this region. Results outside are excluded."
                   },
                   "includedTypes": {
                     "maxItems": 50,
@@ -7244,32 +7265,38 @@
                             "type": "object",
                             "properties": {
                               "latitude": {
-                                "type": "number"
+                                "type": "number",
+                                "description": "Latitude in decimal degrees (WGS-84). Range -90 to 90."
                               },
                               "longitude": {
-                                "type": "number"
+                                "type": "number",
+                                "description": "Longitude in decimal degrees (WGS-84). Range -180 to 180."
                               }
                             },
                             "required": [
                               "latitude",
                               "longitude"
-                            ]
+                            ],
+                            "description": "Center point of the circular region (latitude, longitude in WGS-84)."
                           },
                           "radius": {
                             "type": "number",
                             "minimum": 0,
-                            "maximum": 50000
+                            "maximum": 50000,
+                            "description": "Radius of the circular region in meters."
                           }
                         },
                         "required": [
                           "center",
                           "radius"
-                        ]
+                        ],
+                        "description": "Circular region with `center` (lat/lng) and `radius` in meters."
                       }
                     },
                     "required": [
                       "circle"
-                    ]
+                    ],
+                    "description": "Hard restriction to results inside this region. Results outside are excluded."
                   },
                   "includedTypes": {
                     "maxItems": 50,
@@ -7856,7 +7883,8 @@
               "type": "string",
               "minLength": 1
             },
-            "required": true
+            "required": true,
+            "description": "Google Places API place identifier (e.g. \"ChIJN1t_tDeuEmsRUsoyG83frY4\"). Obtain it from a prior text/nearby search."
           },
           {
             "in": "query",
@@ -7876,7 +7904,8 @@
                   "type": "string"
                 }
               ]
-            }
+            },
+            "description": "Comma-separated list of place-detail fields to omit from the response (e.g. \"photos,reviews\"). Useful to cut payload size and cost when those fields aren't needed."
           },
           {
             "in": "query",
@@ -7884,7 +7913,8 @@
             "schema": {
               "default": "en",
               "type": "string"
-            }
+            },
+            "description": "BCP-47 language tag for localized place names and reviews (e.g. \"en\", \"fr\", \"ja-JP\"). Defaults to \"en\"."
           }
         ],
         "responses": {
@@ -8421,7 +8451,8 @@
               "minimum": -90,
               "maximum": 90
             },
-            "required": true
+            "required": true,
+            "description": "Latitude in decimal degrees (WGS-84). Range -90 to 90."
           },
           {
             "in": "query",
@@ -8431,7 +8462,8 @@
               "minimum": -180,
               "maximum": 180
             },
-            "required": true
+            "required": true,
+            "description": "Longitude in decimal degrees (WGS-84). Range -180 to 180."
           },
           {
             "in": "query",
@@ -8444,7 +8476,8 @@
                 "MEDIUM",
                 "HIGH"
               ]
-            }
+            },
+            "description": "Minimum data quality tier required (e.g. \"HIGH\", \"MEDIUM\", \"LOW\"). Omit to accept any."
           }
         ],
         "responses": {
@@ -8621,7 +8654,8 @@
               "minimum": -90,
               "maximum": 90
             },
-            "required": true
+            "required": true,
+            "description": "Latitude in decimal degrees (WGS-84). Range -90 to 90."
           },
           {
             "in": "query",
@@ -8631,7 +8665,8 @@
               "minimum": -180,
               "maximum": 180
             },
-            "required": true
+            "required": true,
+            "description": "Longitude in decimal degrees (WGS-84). Range -180 to 180."
           },
           {
             "in": "query",
@@ -8641,7 +8676,8 @@
               "type": "number",
               "minimum": 0.1,
               "maximum": 175
-            }
+            },
+            "description": "Search/render radius in meters around the (latitude, longitude) center."
           },
           {
             "in": "query",
@@ -8669,7 +8705,8 @@
                 "MEDIUM",
                 "HIGH"
               ]
-            }
+            },
+            "description": "Minimum data quality tier required (e.g. \"HIGH\", \"MEDIUM\", \"LOW\"). Omit to accept any."
           },
           {
             "in": "query",
@@ -8677,7 +8714,8 @@
             "schema": {
               "default": 0.25,
               "type": "number"
-            }
+            },
+            "description": "Resolution of the returned heatmap data in meters per pixel. Smaller values = higher resolution = larger payload."
           },
           {
             "in": "query",
@@ -8685,7 +8723,8 @@
             "schema": {
               "default": false,
               "type": "boolean"
-            }
+            },
+            "description": "If true, only return data at exactly the requested quality tier; otherwise lower tiers may be substituted."
           }
         ],
         "responses": {
@@ -8838,7 +8877,8 @@
               "type": "number",
               "minimum": 0.1,
               "maximum": 100
-            }
+            },
+            "description": "Search/render radius in meters around the (latitude, longitude) center."
           },
           {
             "in": "query",
@@ -8898,7 +8938,8 @@
               "type": "integer",
               "minimum": 1,
               "maximum": 2
-            }
+            },
+            "description": "Image scale multiplier (1, 2, 3...). 1 returns the native resolution; higher values upscale."
           },
           {
             "in": "query",
@@ -8906,7 +8947,8 @@
             "schema": {
               "default": false,
               "type": "boolean"
-            }
+            },
+            "description": "If true, crop the rendered image tightly to the building footprint."
           },
           {
             "in": "query",
@@ -8916,7 +8958,8 @@
               "type": "integer",
               "minimum": 1,
               "maximum": 100
-            }
+            },
+            "description": "Image quality preset (e.g. \"high\", \"medium\", \"low\"). Trade off payload size vs. detail."
           }
         ],
         "responses": {
@@ -9119,7 +9162,8 @@
                 "properties": {
                   "address": {
                     "type": "string",
-                    "minLength": 1
+                    "minLength": 1,
+                    "description": "Postal address for the location, in human-readable form (e.g. \"1600 Amphitheatre Parkway, Mountain View, CA\"). The Maps API resolves this to lat/lng."
                   }
                 },
                 "required": [
