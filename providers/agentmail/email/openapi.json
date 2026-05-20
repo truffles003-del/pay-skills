@@ -12,7 +12,7 @@
         "tags": [
           "subpackage_pods"
         ],
-        "summary": "List Pods (v0 pods endpoint)",
+        "summary": "List AgentMail pods for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -154,7 +154,7 @@
         "tags": [
           "subpackage_pods"
         ],
-        "summary": "Create Pod (post v0 pods)",
+        "summary": "Create AgentMail pod for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -275,7 +275,7 @@
         "tags": [
           "subpackage_drafts"
         ],
-        "summary": "List Drafts (get v0 drafts)",
+        "summary": "List email drafts for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -462,7 +462,7 @@
         "tags": [
           "subpackage_domains"
         ],
-        "summary": "List Domains (v0 domains)",
+        "summary": "List sender domains for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -604,7 +604,7 @@
         "tags": [
           "subpackage_domains"
         ],
-        "summary": "Create Domain (v0 domains)",
+        "summary": "Create sender domain for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -725,7 +725,7 @@
         "tags": [
           "subpackage_inboxes"
         ],
-        "summary": "List Inboxes (v0 inboxes)",
+        "summary": "List AgentMail inboxes for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -867,7 +867,7 @@
         "tags": [
           "subpackage_inboxes"
         ],
-        "summary": "Create Inbox (v0 inboxes)",
+        "summary": "Create AgentMail inbox for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -988,7 +988,7 @@
         "tags": [
           "subpackage_metrics"
         ],
-        "summary": "Query Metrics (v0 metrics)",
+        "summary": "Query usage metrics for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -1175,7 +1175,7 @@
         "tags": [
           "subpackage_threads"
         ],
-        "summary": "List Threads (v0 threads)",
+        "summary": "List email threads for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -1395,7 +1395,7 @@
         "tags": [
           "subpackage_webhooks"
         ],
-        "summary": "List Webhooks (v0 webhooks)",
+        "summary": "List webhook subscriptions for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -1537,7 +1537,7 @@
         "tags": [
           "subpackage_webhooks"
         ],
-        "summary": "Create Webhook (v0 webhooks)",
+        "summary": "Create webhook subscription for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -1658,7 +1658,7 @@
         "tags": [
           "subpackage_pods"
         ],
-        "summary": "Get Pod (v0 pods endpoint)",
+        "summary": "Get AgentMail pod for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -1827,7 +1827,7 @@
         "tags": [
           "subpackage_pods"
         ],
-        "summary": "Delete Pod (delete v0 pods)",
+        "summary": "Delete AgentMail pod for the workspace",
         "responses": {
           "200": {
             "description": "Successful response"
@@ -1992,7 +1992,7 @@
         "tags": [
           "subpackage_drafts"
         ],
-        "summary": "Get Draft (get v0 drafts)",
+        "summary": "Get email draft for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -2163,7 +2163,7 @@
         "tags": [
           "subpackage_inboxes"
         ],
-        "summary": "Get Inbox (get v0 inboxes)",
+        "summary": "Get AgentMail inbox for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -2332,7 +2332,7 @@
         "tags": [
           "subpackage_inboxes"
         ],
-        "summary": "Update Inbox (v0 inboxes)",
+        "summary": "Update AgentMail inbox for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -2497,7 +2497,7 @@
         "tags": [
           "subpackage_inboxes"
         ],
-        "summary": "Delete Inbox (v0 inboxes)",
+        "summary": "Delete AgentMail inbox for the workspace",
         "responses": {
           "200": {
             "description": "Successful response"
@@ -2662,7 +2662,7 @@
         "tags": [
           "subpackage_domains"
         ],
-        "summary": "Get Domain (get v0 domains)",
+        "summary": "Get sender domain for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -2831,7 +2831,7 @@
         "tags": [
           "subpackage_domains"
         ],
-        "summary": "Update Domain (v0 domains)",
+        "summary": "Update sender domain for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -2996,7 +2996,7 @@
         "tags": [
           "subpackage_domains"
         ],
-        "summary": "Delete Domain (v0 domains)",
+        "summary": "Delete sender domain for the workspace",
         "responses": {
           "200": {
             "description": "Successful response"
@@ -3161,7 +3161,7 @@
         "tags": [
           "subpackage_threads"
         ],
-        "summary": "Get Thread (get v0 threads)",
+        "summary": "Get email thread for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -3330,7 +3330,7 @@
         "tags": [
           "subpackage_threads"
         ],
-        "summary": "Delete Thread (v0 threads)",
+        "summary": "Delete email thread for the workspace",
         "responses": {
           "200": {
             "description": "Successful response"
@@ -3508,7 +3508,7 @@
         "tags": [
           "subpackage_pods.subpackage_pods/drafts"
         ],
-        "summary": "List Drafts (pods drafts)",
+        "summary": "List email drafts for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -3745,7 +3745,7 @@
         "tags": [
           "subpackage_pods.subpackage_pods/domains"
         ],
-        "summary": "List Domains (pods domains)",
+        "summary": "List sender domains for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -3947,7 +3947,7 @@
         "tags": [
           "subpackage_pods.subpackage_pods/domains"
         ],
-        "summary": "Create Domain (pods domains)",
+        "summary": "Create sender domain for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -4114,7 +4114,7 @@
         "tags": [
           "subpackage_pods.subpackage_pods/inboxes"
         ],
-        "summary": "List Inboxes (pods inboxes)",
+        "summary": "List AgentMail inboxes for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -4316,7 +4316,7 @@
         "tags": [
           "subpackage_pods.subpackage_pods/inboxes"
         ],
-        "summary": "Create Inbox (pods inboxes)",
+        "summary": "Create AgentMail inbox for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -4483,7 +4483,7 @@
         "tags": [
           "subpackage_pods.subpackage_pods/metrics"
         ],
-        "summary": "Query Metrics (pods metrics)",
+        "summary": "Query usage metrics for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -4720,7 +4720,7 @@
         "tags": [
           "subpackage_pods.subpackage_pods/threads"
         ],
-        "summary": "List Threads (pods threads)",
+        "summary": "List email threads for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -4990,7 +4990,7 @@
         "tags": [
           "subpackage_webhooks"
         ],
-        "summary": "Get Webhook (v0 webhooks)",
+        "summary": "Get webhook subscription for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -5159,7 +5159,7 @@
         "tags": [
           "subpackage_webhooks"
         ],
-        "summary": "Update Webhook (v0 webhooks)",
+        "summary": "Update webhook subscription for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -5334,7 +5334,7 @@
         "tags": [
           "subpackage_webhooks"
         ],
-        "summary": "Delete Webhook (v0 webhooks)",
+        "summary": "Delete webhook subscription for the workspace",
         "responses": {
           "200": {
             "description": "Successful response"
@@ -5697,7 +5697,7 @@
         "tags": [
           "subpackage_lists"
         ],
-        "summary": "Create List Entry (lists)",
+        "summary": "Create saved list entry for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -5877,7 +5877,7 @@
         "tags": [
           "subpackage_inboxes.subpackage_inboxes/drafts"
         ],
-        "summary": "List Drafts (inboxes drafts)",
+        "summary": "List email drafts for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -6112,7 +6112,7 @@
         "tags": [
           "subpackage_inboxes.subpackage_inboxes/drafts"
         ],
-        "summary": "Create Draft (inboxes drafts)",
+        "summary": "Create email draft for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -6279,7 +6279,7 @@
         "tags": [
           "subpackage_domains"
         ],
-        "summary": "Verify Domain (domains verify)",
+        "summary": "Verify sender domain for the workspace",
         "responses": {
           "200": {
             "description": "Successful response"
@@ -6444,7 +6444,7 @@
         "tags": [
           "subpackage_inboxes.subpackage_inboxes/metrics"
         ],
-        "summary": "Query Metrics (inboxes metrics)",
+        "summary": "Query usage metrics for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -6681,7 +6681,7 @@
         "tags": [
           "subpackage_inboxes.subpackage_inboxes/threads"
         ],
-        "summary": "List Threads (inboxes threads)",
+        "summary": "List email threads for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -6951,7 +6951,7 @@
         "tags": [
           "subpackage_inboxes.subpackage_inboxes/messages"
         ],
-        "summary": "List Messages (inboxes messages)",
+        "summary": "List email messages for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -7394,7 +7394,7 @@
         "tags": [
           "subpackage_pods.subpackage_pods/drafts"
         ],
-        "summary": "Get Draft (v0 pods drafts)",
+        "summary": "Get email draft for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -7582,7 +7582,7 @@
         "tags": [
           "subpackage_inboxes.subpackage_inboxes/messages"
         ],
-        "summary": "Send Message (messages send)",
+        "summary": "Send email message for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -7769,7 +7769,7 @@
         "tags": [
           "subpackage_lists"
         ],
-        "summary": "Get List Entry (v0 lists)",
+        "summary": "Get saved list entry for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -7973,7 +7973,7 @@
         "tags": [
           "subpackage_lists"
         ],
-        "summary": "Delete List Entry (v0 lists)",
+        "summary": "Delete saved list entry for the workspace",
         "responses": {
           "200": {
             "description": "Successful response"
@@ -8173,7 +8173,7 @@
         "tags": [
           "subpackage_pods.subpackage_pods/inboxes"
         ],
-        "summary": "Get Inbox (v0 pods inboxes)",
+        "summary": "Get AgentMail inbox for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -8359,7 +8359,7 @@
         "tags": [
           "subpackage_pods.subpackage_pods/inboxes"
         ],
-        "summary": "Update Inbox (patch inboxes)",
+        "summary": "Update AgentMail inbox for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -8537,7 +8537,7 @@
         "tags": [
           "subpackage_pods.subpackage_pods/inboxes"
         ],
-        "summary": "Delete Inbox (delete inboxes)",
+        "summary": "Delete AgentMail inbox for the workspace",
         "responses": {
           "200": {
             "description": "Successful response"
@@ -8719,7 +8719,7 @@
         "tags": [
           "subpackage_pods.subpackage_pods/domains"
         ],
-        "summary": "Get Domain (get domains)",
+        "summary": "Get sender domain for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -8905,7 +8905,7 @@
         "tags": [
           "subpackage_pods.subpackage_pods/domains"
         ],
-        "summary": "Update Domain (patch domains)",
+        "summary": "Update sender domain for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -9083,7 +9083,7 @@
         "tags": [
           "subpackage_pods.subpackage_pods/domains"
         ],
-        "summary": "Delete Domain (delete domains)",
+        "summary": "Delete sender domain for the workspace",
         "responses": {
           "200": {
             "description": "Successful response"
@@ -9265,7 +9265,7 @@
         "tags": [
           "subpackage_pods.subpackage_pods/threads"
         ],
-        "summary": "Get Thread (get threads)",
+        "summary": "Get email thread for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -9451,7 +9451,7 @@
         "tags": [
           "subpackage_pods.subpackage_pods/threads"
         ],
-        "summary": "Delete Thread (delete threads)",
+        "summary": "Delete email thread for the workspace",
         "responses": {
           "200": {
             "description": "Successful response"
@@ -9646,7 +9646,7 @@
         "tags": [
           "subpackage_inboxes.subpackage_inboxes/drafts"
         ],
-        "summary": "Get Draft (v0 inboxes drafts)",
+        "summary": "Get email draft for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -9832,7 +9832,7 @@
         "tags": [
           "subpackage_inboxes.subpackage_inboxes/drafts"
         ],
-        "summary": "Update Draft (patch drafts)",
+        "summary": "Update email draft for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -10010,7 +10010,7 @@
         "tags": [
           "subpackage_inboxes.subpackage_inboxes/drafts"
         ],
-        "summary": "Delete Draft (delete drafts)",
+        "summary": "Delete email draft for the workspace",
         "responses": {
           "200": {
             "description": "Successful response"
@@ -10192,7 +10192,7 @@
         "tags": [
           "subpackage_inboxes.subpackage_inboxes/threads"
         ],
-        "summary": "Get Thread (get threads)",
+        "summary": "Get email thread for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -10378,7 +10378,7 @@
         "tags": [
           "subpackage_inboxes.subpackage_inboxes/threads"
         ],
-        "summary": "Delete Thread (delete threads)",
+        "summary": "Delete email thread for the workspace",
         "responses": {
           "200": {
             "description": "Successful response"
@@ -10788,7 +10788,7 @@
         "tags": [
           "subpackage_pods.subpackage_pods/lists"
         ],
-        "summary": "Create List Entry (lists)",
+        "summary": "Create saved list entry for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -10981,7 +10981,7 @@
         "tags": [
           "subpackage_inboxes.subpackage_inboxes/messages"
         ],
-        "summary": "Get Message (get messages)",
+        "summary": "Get email message for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -11167,7 +11167,7 @@
         "tags": [
           "subpackage_inboxes.subpackage_inboxes/messages"
         ],
-        "summary": "Update Message (messages)",
+        "summary": "Update email message for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -11357,7 +11357,7 @@
         "tags": [
           "subpackage_pods.subpackage_pods/domains"
         ],
-        "summary": "Verify Domain (domains verify)",
+        "summary": "Verify sender domain for the workspace",
         "responses": {
           "200": {
             "description": "Successful response"
@@ -11539,7 +11539,7 @@
         "tags": [
           "subpackage_inboxes.subpackage_inboxes/drafts"
         ],
-        "summary": "Send Draft (drafts send)",
+        "summary": "Send email draft for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -11954,7 +11954,7 @@
         "tags": [
           "subpackage_inboxes.subpackage_inboxes/lists"
         ],
-        "summary": "Create List Entry (lists)",
+        "summary": "Create saved list entry for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -12337,7 +12337,7 @@
         "tags": [
           "subpackage_inboxes.subpackage_inboxes/messages"
         ],
-        "summary": "Get Raw Message (get-raw)",
+        "summary": "Get email message for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -12525,7 +12525,7 @@
         "tags": [
           "subpackage_drafts"
         ],
-        "summary": "Get Attachment (get-attachment)",
+        "summary": "Get message attachment for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -12713,7 +12713,7 @@
         "tags": [
           "subpackage_inboxes.subpackage_inboxes/messages"
         ],
-        "summary": "Reply To Message (messages reply)",
+        "summary": "Reply email message for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -12913,7 +12913,7 @@
         "tags": [
           "subpackage_pods.subpackage_pods/lists"
         ],
-        "summary": "Get List Entry (v0 pods lists)",
+        "summary": "Get saved list entry for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -13134,7 +13134,7 @@
         "tags": [
           "subpackage_pods.subpackage_pods/lists"
         ],
-        "summary": "Delete List Entry (v0 pods lists)",
+        "summary": "Delete saved list entry for the workspace",
         "responses": {
           "200": {
             "description": "Successful response"
@@ -13351,7 +13351,7 @@
         "tags": [
           "subpackage_threads"
         ],
-        "summary": "Get Attachment (get-attachment)",
+        "summary": "Get message attachment for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -13539,7 +13539,7 @@
         "tags": [
           "subpackage_inboxes.subpackage_inboxes/messages"
         ],
-        "summary": "Forward Message (messages forward)",
+        "summary": "Forward email message for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -13739,7 +13739,7 @@
         "tags": [
           "subpackage_inboxes.subpackage_inboxes/messages"
         ],
-        "summary": "Reply All Message (reply-all)",
+        "summary": "Reply email message for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -13939,7 +13939,7 @@
         "tags": [
           "subpackage_inboxes.subpackage_inboxes/lists"
         ],
-        "summary": "Get List Entry (v0 inboxes lists)",
+        "summary": "Get saved list entry for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -14160,7 +14160,7 @@
         "tags": [
           "subpackage_inboxes.subpackage_inboxes/lists"
         ],
-        "summary": "Delete List Entry (v0 inboxes lists)",
+        "summary": "Delete saved list entry for the workspace",
         "responses": {
           "200": {
             "description": "Successful response"
@@ -14377,7 +14377,7 @@
         "tags": [
           "subpackage_pods.subpackage_pods/drafts"
         ],
-        "summary": "Get Attachment (get-attachment)",
+        "summary": "Get message attachment for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -14582,7 +14582,7 @@
         "tags": [
           "subpackage_pods.subpackage_pods/threads"
         ],
-        "summary": "Get Attachment (get-attachment)",
+        "summary": "Get message attachment for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -14787,7 +14787,7 @@
         "tags": [
           "subpackage_inboxes.subpackage_inboxes/drafts"
         ],
-        "summary": "Get Attachment (get-attachment)",
+        "summary": "Get message attachment for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -14992,7 +14992,7 @@
         "tags": [
           "subpackage_inboxes.subpackage_inboxes/threads"
         ],
-        "summary": "Get Attachment (get-attachment)",
+        "summary": "Get message attachment for the workspace",
         "responses": {
           "200": {
             "content": {
@@ -15197,7 +15197,7 @@
         "tags": [
           "subpackage_inboxes.subpackage_inboxes/messages"
         ],
-        "summary": "Get Attachment (get-attachment)",
+        "summary": "Get message attachment for the workspace",
         "responses": {
           "200": {
             "content": {

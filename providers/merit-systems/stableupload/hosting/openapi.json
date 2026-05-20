@@ -178,7 +178,7 @@
     "/api/site": {
       "post": {
         "operationId": "site",
-        "summary": "Buy a site upload slot. Upload a zip file, then activate to",
+        "summary": "Buy a site upload slot and activate the zip",
         "tags": [
           "Site"
         ],

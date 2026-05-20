@@ -254,7 +254,7 @@
         "tags": [
           "entities"
         ],
-        "summary": "Searches Knowledge Graph for entities that match the"
+        "summary": "Searches Knowledge Graph for entities that match"
       },
       "parameters": [
         {

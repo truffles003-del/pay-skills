@@ -1380,7 +1380,7 @@
     "/api/inbox/messages/delete": {
       "post": {
         "operationId": "inbox_messages_delete",
-        "summary": "Delete a single inbox message (free)",
+        "summary": "Delete email message for the workspace",
         "tags": [
           "Inbox"
         ],
@@ -1598,7 +1598,7 @@
     "/api/subdomain/inbox/messages/delete": {
       "post": {
         "operationId": "subdomain_inbox_messages_delete",
-        "summary": "Delete a single subdomain inbox message (free)",
+        "summary": "Delete email message for the workspace",
         "tags": [
           "Subdomain"
         ],

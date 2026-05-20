@@ -1842,7 +1842,7 @@
         "tags": [
           "files"
         ],
-        "summary": "Service that performs image detection and annotation for a"
+        "summary": "Service that performs image detection and annotation"
       }
     },
     "/v1/files:asyncBatchAnnotate": {
@@ -1908,7 +1908,7 @@
         "tags": [
           "files"
         ],
-        "summary": "Run asynchronous image detection and annotation for a list of"
+        "summary": "Run asynchronous image detection and annotation for a list"
       }
     },
     "/v1/images:annotate": {
@@ -2039,7 +2039,7 @@
         "tags": [
           "images"
         ],
-        "summary": "Run asynchronous image detection and annotation for a list of"
+        "summary": "Run asynchronous image detection and annotation for a list"
       }
     }
   },

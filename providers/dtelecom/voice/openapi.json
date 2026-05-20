@@ -407,7 +407,7 @@
     },
     "/v1/account/sessions": {
       "get": {
-        "summary": "Get session list (v1 account sessions)",
+        "summary": "Get saved list for the workspace",
         "x-agentcash-auth": {
           "mode": "siwx"
         },

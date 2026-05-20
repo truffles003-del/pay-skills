@@ -2175,7 +2175,7 @@
     "/api/apollo/people-enrich": {
       "post": {
         "operationId": "apollo_people-enrich",
-        "summary": "Apollo People Enrichment - Enrich single person by",
+        "summary": "Apollo: enrich a single person by email or name",
         "tags": [
           "Apollo"
         ],
@@ -3578,7 +3578,7 @@
     "/api/apollo/org-enrich": {
       "post": {
         "operationId": "apollo_org-enrich",
-        "summary": "Apollo Organization Enrichment - Enrich single company by",
+        "summary": "Apollo: enrich a single company by domain",
         "tags": [
           "Apollo"
         ],
@@ -8419,7 +8419,7 @@
     "/api/google-maps/solar/building-insights": {
       "get": {
         "operationId": "google-maps_solar_building-insights",
-        "summary": "Google Solar API - Closest building roof insights including",
+        "summary": "google-maps solar building-insights",
         "tags": [
           "Google Maps"
         ],
@@ -10603,7 +10603,7 @@
     "/api/whitepages/property-search": {
       "post": {
         "operationId": "whitepages_property-search",
-        "summary": "Whitepages Property Search - Get property ownership and",
+        "summary": "whitepages property-search",
         "tags": [
           "Whitepages"
         ],
@@ -12619,7 +12619,7 @@
     "/api/influencer/enrich-by-social": {
       "post": {
         "operationId": "influencer_enrich-by-social",
-        "summary": "Influencer Enrich by Social - Enrich social media profile with",
+        "summary": "influencer enrich-by-social",
         "tags": [
           "Influencer"
         ],
@@ -12922,7 +12922,7 @@
     "/api/minerva/resolve": {
       "post": {
         "operationId": "minerva_resolve",
-        "summary": "Minerva Resolve - Resolve person identity to a Minerva PID and",
+        "summary": "Minerva: resolve a person identity to a PID",
         "tags": [
           "Minerva"
         ],
@@ -14006,7 +14006,7 @@
     "/api/minerva/validate-emails": {
       "post": {
         "operationId": "minerva_validate-emails",
-        "summary": "Minerva Validate Emails - Check if email addresses exist in",
+        "summary": "Minerva: check whether email addresses exist",
         "tags": [
           "Minerva"
         ],
@@ -14126,7 +14126,7 @@
     "/api/cloudflare/crawl": {
       "post": {
         "operationId": "cloudflare_crawl",
-        "summary": "Cloudflare Browser Rendering Crawl - Start a crawl job and",
+        "summary": "Cloudflare Browser Rendering: start a crawl job",
         "tags": [
           "Cloudflare"
         ],

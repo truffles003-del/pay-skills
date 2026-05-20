@@ -2645,7 +2645,7 @@
     "/v1/analyst/price-dispersion": {
       "get": {
         "operationId": "getPriceDispersion",
-        "summary": "Analyze price spread across retailers for a category or",
+        "summary": "Analyze price spread within a category",
         "description": "Analyze price spread within a category - mean, stddev, coefficient of variation, and percentiles (p10..p90) with IQR outlier exclusion.",
         "tags": [
           "Analyst"
