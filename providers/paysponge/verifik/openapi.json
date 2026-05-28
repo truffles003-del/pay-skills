@@ -35,7 +35,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Global - DEA Background Check",
+        "summary": "Run DEA background check",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -245,7 +245,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Global - FBI Background Check",
+        "summary": "Run FBI background check",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -455,7 +455,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Global - UN Sanctions Check",
+        "summary": "Check UN sanctions list",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -665,7 +665,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Global - OFAC Sanctions Check",
+        "summary": "Check OFAC sanctions list",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -875,7 +875,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Paraguay - National ID Verification",
+        "summary": "Verify Paraguay national ID",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -984,7 +984,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "El Salvador - National ID Verification",
+        "summary": "Verify El Salvador national ID",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -1106,7 +1106,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Global - Europol Background Check",
+        "summary": "Run Europol background check",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -1316,7 +1316,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Mexico - National ID Verification",
+        "summary": "Verify Mexico national ID",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -1444,7 +1444,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "USA - SSN Verification",
+        "summary": "Verify USA SSN",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -1553,7 +1553,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Global - Interpol Background Check",
+        "summary": "Run Interpol background check",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -1763,7 +1763,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Argentina - National ID Verification",
+        "summary": "Verify Argentina national ID",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -1891,7 +1891,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Bolivia - National ID Verification",
+        "summary": "Verify Bolivia national ID",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -2032,7 +2032,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Brazil - National ID Verification",
+        "summary": "Verify Brazil national ID",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -2173,7 +2173,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Chile - National ID Verification",
+        "summary": "Verify Chile national ID",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -2301,7 +2301,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - National ID Verification",
+        "summary": "Verify Colombia national ID",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -2433,7 +2433,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - SISBEN Score Verification",
+        "summary": "Fetch Colombia SISBEN social score",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -2569,7 +2569,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Costa Rica - National ID Verification",
+        "summary": "Verify Costa Rica national ID",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -2697,7 +2697,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Dominican Republic - National ID Verification",
+        "summary": "Verify Dominican Republic national ID",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -2825,7 +2825,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Ecuador - National ID Verification",
+        "summary": "Verify Ecuador national ID",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -2934,7 +2934,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Spain - National ID Verification",
+        "summary": "Verify Spain national ID",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -3077,7 +3077,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Guatemala - National ID Verification",
+        "summary": "Verify Guatemala national ID",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -3205,7 +3205,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Honduras - National ID Verification",
+        "summary": "Verify Honduras national ID",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -3333,7 +3333,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "IP Geolocation Lookup",
+        "summary": "Look up IP geolocation",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -3442,7 +3442,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Panama - National ID Verification",
+        "summary": "Verify Panama national ID",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -3583,7 +3583,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Venezuela - National ID Verification",
+        "summary": "Verify Venezuela national ID",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -3711,7 +3711,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Argentina - Company Lookup",
+        "summary": "Look up Argentina company",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -3839,7 +3839,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Argentina - Vehicle Verification",
+        "summary": "Verify Argentina vehicle",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -3948,7 +3948,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Bolivia - Company Lookup",
+        "summary": "Look up Bolivia company",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -4076,7 +4076,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Bolivia - Vehicle Verification",
+        "summary": "Verify Bolivia vehicle",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -4185,7 +4185,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Brazil - Company Lookup",
+        "summary": "Look up Brazil company",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -4313,7 +4313,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Brazil - Vehicle Verification",
+        "summary": "Verify Brazil vehicle",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -4422,7 +4422,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Canada - Company Lookup",
+        "summary": "Look up Canada company",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -4562,7 +4562,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Chile - Company Lookup",
+        "summary": "Look up Chile company",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -4690,7 +4690,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Chile - Vehicle Verification",
+        "summary": "Verify Chile vehicle",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -4799,7 +4799,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": " - Company Lookup",
+        "summary": "Look up company",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -4927,7 +4927,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": " - Vehicle Verification",
+        "summary": "Verify vehicle",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -5036,7 +5036,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Ecuador - Company Lookup",
+        "summary": "Look up Ecuador company",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -5164,7 +5164,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Spain - Company Lookup",
+        "summary": "Look up Spain company",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -5292,7 +5292,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Spain - Vehicle Verification",
+        "summary": "Verify Spain vehicle",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -5401,7 +5401,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Mexico - Company Lookup",
+        "summary": "Look up Mexico company",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -5529,7 +5529,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Panama - Company Lookup",
+        "summary": "Look up Panama company",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -5670,7 +5670,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Paraguay - Company Lookup",
+        "summary": "Look up Paraguay company",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -5798,7 +5798,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Paraguay - Vehicle Verification",
+        "summary": "Verify Paraguay vehicle",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -5907,7 +5907,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "chile api taxpayer lookup",
+        "summary": "Look up Chile taxpayer record",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -6035,7 +6035,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "USA - Company Lookup",
+        "summary": "Look up USA company",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -6144,7 +6144,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "USA - Vehicle Verification",
+        "summary": "Verify USA vehicle",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -6370,7 +6370,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - Government Contracts Verification",
+        "summary": "Check Colombia government contracts",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -6518,7 +6518,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "OCR Document Scan GPT",
+        "summary": "Scan document with OCR (GPT)",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -6651,7 +6651,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - National ID Verification",
+        "summary": "Verify Colombia national ID",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -6792,7 +6792,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - Tax Information Verification",
+        "summary": "Verify Colombia DIAN tax information",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -6920,7 +6920,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - Police Records Check",
+        "summary": "Check Colombia police records",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -7067,7 +7067,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "OCR Document Scan Studio",
+        "summary": "Scan document with OCR (Studio)",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -7200,7 +7200,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Venezuela - Immigration Status Verification",
+        "summary": "Verify Venezuela immigration status",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -7309,7 +7309,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - Health Records Verification",
+        "summary": "Verify Colombia health records",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -7437,7 +7437,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - Lawyers Verification",
+        "summary": "Verify Colombia lawyer status",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -7569,7 +7569,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - Basic Vehicle Information",
+        "summary": "Fetch Colombia basic vehicle information",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -7718,7 +7718,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Peru - Vehicle Verification",
+        "summary": "Verify Peru vehicle",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -7827,7 +7827,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - Driver License Verification (RUNT)",
+        "summary": "Verify Colombia driver license via RUNT",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -7963,7 +7963,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Ecuador - Vehicle Verification",
+        "summary": "Verify Ecuador vehicle",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -8072,7 +8072,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Mexico - Vehicle Verification",
+        "summary": "Verify Mexico vehicle",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -8181,7 +8181,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Peru - Vehicle Verification",
+        "summary": "Verify Peru vehicle",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -8290,7 +8290,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - Immigration Status Verification",
+        "summary": "Verify Colombia immigration status",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -8412,7 +8412,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - SIMIT Complete Transit History",
+        "summary": "Fetch Colombia SIMIT complete transit history",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -8550,7 +8550,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Peru - Immigration Status Verification",
+        "summary": "Verify Peru immigration status",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -8672,7 +8672,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "USA - Vehicle Lookup by VIN",
+        "summary": "Look up USA vehicle by VIN",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -8781,7 +8781,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - Immigration Status Verification",
+        "summary": "Verify Colombia immigration status",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -8903,7 +8903,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - Immigration Status Verification",
+        "summary": "Verify Colombia immigration status",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -9025,7 +9025,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "United States - Identity Verification",
+        "summary": "Verify United States identity (passport)",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -9186,7 +9186,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - Police Records Check",
+        "summary": "Check Colombia police records",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -9316,7 +9316,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - Data Verification Service",
+        "summary": "Verify Colombia vehicle ownership data",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -9425,7 +9425,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - Military Service Records",
+        "summary": "Fetch Colombia military service records",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -9558,7 +9558,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - Vehicle Tax Status",
+        "summary": "Fetch Colombia vehicle tax status",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -9701,7 +9701,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - SISCONMP Transport Verification",
+        "summary": "Check Colombia SISCONMP transport certification",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -9831,7 +9831,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - Complete Vehicle Report (By VIN)",
+        "summary": "Fetch Colombia complete vehicle report (by VIN)",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -9940,7 +9940,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - Bogota Transit Fines",
+        "summary": "Fetch Colombia Bogota transit fines",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -10049,7 +10049,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - DIAN Electronic Invoicer Status",
+        "summary": "Fetch Colombia DIAN electronic invoicer status",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -10177,7 +10177,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - Complete Vehicle Report (By Plate)",
+        "summary": "Fetch Colombia complete vehicle report (by plate)",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -10324,7 +10324,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - SIMIT Fines by Plate",
+        "summary": "Fetch Colombia SIMIT fines by plate",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -10433,7 +10433,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - Pico y Placa Restrictions",
+        "summary": "Fetch Colombia Pico y Placa restrictions",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -10542,7 +10542,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Ecuador - Vehicle Fines",
+        "summary": "Fetch Ecuador vehicle fines",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -10651,7 +10651,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - Medellin Transit Fines",
+        "summary": "Fetch Colombia Medellin transit fines",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -10760,7 +10760,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - Electoral Records Verification",
+        "summary": "Verify Colombia electoral records",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -10869,7 +10869,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "USA - Driver License Verification",
+        "summary": "Verify USA driver license",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -10978,7 +10978,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - Legal Background Check",
+        "summary": "Run Colombia legal background check",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -11110,7 +11110,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - Lawyers Verification",
+        "summary": "Verify Colombia lawyer status",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -11265,7 +11265,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - Electoral Records Verification",
+        "summary": "Verify Colombia electoral records",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -11406,7 +11406,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - Politically Exposed Persons (PEP) Lookup",
+        "summary": "Look up Colombia politically exposed persons (PEP)",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -11534,7 +11534,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - Bogota Vehicle Accidents",
+        "summary": "Fetch Colombia Bogota vehicle accidents",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -11643,7 +11643,7 @@
           "Data",
           "LATAM"
         ],
-        "summary": "Colombia - Simplified Vehicle Report",
+        "summary": "Fetch Colombia simplified vehicle report",
         "responses": {
           "200": {
             "description": "Success \u2014 proxied Verifik response"
@@ -11786,7 +11786,7 @@
     },
     "/v2/communication/whatsapp": {
       "get": {
-        "summary": "GET /v2/communication/whatsapp",
+        "summary": "Check WhatsApp number",
         "responses": {
           "200": {
             "description": "Success"
@@ -11869,7 +11869,7 @@
     },
     "/v2/co/simit/acuerdos": {
       "get": {
-        "summary": "GET /v2/co/simit/acuerdos",
+        "summary": "Fetch Colombia SIMIT payment agreements",
         "responses": {
           "200": {
             "description": "Success"
@@ -11952,7 +11952,7 @@
     },
     "/v3/pe/company": {
       "get": {
-        "summary": "GET /v3/pe/company",
+        "summary": "Look up Peru company",
         "responses": {
           "200": {
             "description": "Success"
@@ -12035,7 +12035,7 @@
     },
     "/v3/pe/cedula": {
       "get": {
-        "summary": "GET /v3/pe/cedula",
+        "summary": "Verify Peru national ID",
         "responses": {
           "200": {
             "description": "Success"
@@ -12118,7 +12118,7 @@
     },
     "/v3/co/rues": {
       "get": {
-        "summary": "GET /v3/co/rues",
+        "summary": "Fetch Colombia RUES business registry",
         "responses": {
           "200": {
             "description": "Success"
@@ -12201,7 +12201,7 @@
     },
     "/v2/appointments": {
       "get": {
-        "summary": "GET /v2/appointments",
+        "summary": "Fetch appointments",
         "responses": {
           "200": {
             "description": "Success"
@@ -12284,7 +12284,7 @@
     },
     "/v2/ca/quebec/driver-license": {
       "get": {
-        "summary": "GET /v2/ca/quebec/driver-license",
+        "summary": "Verify Canada Quebec driver license",
         "responses": {
           "200": {
             "description": "Success"
@@ -12367,7 +12367,7 @@
     },
     "/v2/br/background-check": {
       "get": {
-        "summary": "GET /v2/br/background-check",
+        "summary": "Run Brazil background check",
         "responses": {
           "200": {
             "description": "Success"
@@ -12450,7 +12450,7 @@
     },
     "/v2/co/deudoresmorosos": {
       "get": {
-        "summary": "GET /v2/co/deudoresmorosos",
+        "summary": "Check Colombia delinquent debtors",
         "responses": {
           "200": {
             "description": "Success"
@@ -12533,7 +12533,7 @@
     },
     "/v3/pe/cedula/extra": {
       "get": {
-        "summary": "GET /v3/pe/cedula/extra",
+        "summary": "Verify Peru national ID (extended)",
         "responses": {
           "200": {
             "description": "Success"
@@ -12616,7 +12616,7 @@
     },
     "/v2/co/rama/proceso": {
       "get": {
-        "summary": "GET /v2/co/rama/proceso",
+        "summary": "Fetch Colombia judicial process",
         "responses": {
           "200": {
             "description": "Success"
@@ -12699,7 +12699,7 @@
     },
     "/v2/cl/driver-license": {
       "get": {
-        "summary": "GET /v2/cl/driver-license",
+        "summary": "Verify Chile driver license",
         "responses": {
           "200": {
             "description": "Success"
@@ -12782,7 +12782,7 @@
     },
     "/v2/co/sena/certificados": {
       "get": {
-        "summary": "GET /v2/co/sena/certificados",
+        "summary": "Fetch Colombia SENA training certificates",
         "responses": {
           "200": {
             "description": "Success"
@@ -12865,7 +12865,7 @@
     },
     "/v2/credit-intents": {
       "get": {
-        "summary": "GET /v2/credit-intents",
+        "summary": "Fetch credit intents",
         "responses": {
           "200": {
             "description": "Success"
@@ -12948,7 +12948,7 @@
     },
     "/v2/ca/ontario/driver-license": {
       "get": {
-        "summary": "GET /v2/ca/ontario/driver-license",
+        "summary": "Verify Canada Ontario driver license",
         "responses": {
           "200": {
             "description": "Success"
@@ -13031,7 +13031,7 @@
     },
     "/v2/co/rama/procesos": {
       "get": {
-        "summary": "GET /v2/co/rama/procesos",
+        "summary": "Fetch Colombia judicial processes",
         "responses": {
           "200": {
             "description": "Success"
@@ -13114,7 +13114,7 @@
     },
     "/v2/communication/email": {
       "get": {
-        "summary": "GET /v2/communication/email",
+        "summary": "Verify email address",
         "responses": {
           "200": {
             "description": "Success"
@@ -13197,7 +13197,7 @@
     },
     "/v2/communication/sms": {
       "get": {
-        "summary": "GET /v2/communication/sms",
+        "summary": "Send SMS verification",
         "responses": {
           "200": {
             "description": "Success"
@@ -13280,7 +13280,7 @@
     },
     "/v2/ocr/scan-pro": {
       "post": {
-        "summary": "POST /v2/ocr/scan-pro",
+        "summary": "Scan document with OCR (Pro)",
         "responses": {
           "200": {
             "description": "Success"
@@ -13363,7 +13363,7 @@
     },
     "/v2/co/fasecolda/values-by-plate": {
       "get": {
-        "summary": "GET /v2/co/fasecolda/values-by-plate",
+        "summary": "Fetch Colombia FASECOLDA vehicle values by plate",
         "responses": {
           "200": {
             "description": "Success"
@@ -13446,7 +13446,7 @@
     },
     "/v2/co/rama/juzgado/expedientes": {
       "get": {
-        "summary": "GET /v2/co/rama/juzgado/expedientes",
+        "summary": "Fetch Colombia court case files",
         "responses": {
           "200": {
             "description": "Success"
@@ -13529,7 +13529,7 @@
     },
     "/v2/co/afiliaciones": {
       "get": {
-        "summary": "GET /v2/co/afiliaciones",
+        "summary": "Fetch Colombia social security affiliations",
         "responses": {
           "200": {
             "description": "Success"
@@ -13612,7 +13612,7 @@
     },
     "/v2/ca/british-columbia/driver-license": {
       "get": {
-        "summary": "GET /v2/ca/british-columbia/driver-license",
+        "summary": "Verify Canada British Columbia driver license",
         "responses": {
           "200": {
             "description": "Success"
@@ -13695,7 +13695,7 @@
     },
     "/v2/co/contraloria/certificado": {
       "get": {
-        "summary": "GET /v2/co/contraloria/certificado",
+        "summary": "Fetch Colombia Contralor\u00eda certificate",
         "responses": {
           "200": {
             "description": "Success"
@@ -13778,7 +13778,7 @@
     },
     "/v3/co/rues-complete": {
       "get": {
-        "summary": "GET /v3/co/rues-complete",
+        "summary": "Fetch Colombia RUES complete business registry",
         "responses": {
           "200": {
             "description": "Success"
@@ -13861,7 +13861,7 @@
     },
     "/v2/co/fasecolda/values-by-code": {
       "get": {
-        "summary": "GET /v2/co/fasecolda/values-by-code",
+        "summary": "Fetch Colombia FASECOLDA vehicle values by code",
         "responses": {
           "200": {
             "description": "Success"
@@ -13944,7 +13944,7 @@
     },
     "/v2/co/fasecolda/sinister": {
       "get": {
-        "summary": "GET /v2/co/fasecolda/sinister",
+        "summary": "Fetch Colombia FASECOLDA vehicle sinister history",
         "responses": {
           "200": {
             "description": "Success"
@@ -14027,7 +14027,7 @@
     },
     "/v2/cl/validate/documents": {
       "get": {
-        "summary": "GET /v2/cl/validate/documents",
+        "summary": "Validate Chile documents",
         "responses": {
           "200": {
             "description": "Success"
@@ -14110,7 +14110,7 @@
     },
     "/v2/co/simit/suspensiones": {
       "get": {
-        "summary": "GET /v2/co/simit/suspensiones",
+        "summary": "Fetch Colombia SIMIT license suspensions",
         "responses": {
           "200": {
             "description": "Success"
@@ -14193,7 +14193,7 @@
     },
     "/v3/co/ministerio-de-trabajo/certificados": {
       "get": {
-        "summary": "GET /v3/co/ministerio-de-trabajo/certificados",
+        "summary": "Fetch Colombia Ministry of Labor certificates",
         "responses": {
           "200": {
             "description": "Success"
@@ -14276,7 +14276,7 @@
     },
     "/v2/autodata/selection": {
       "get": {
-        "summary": "GET /v2/autodata/selection",
+        "summary": "Fetch autodata vehicle selection",
         "responses": {
           "200": {
             "description": "Success"
@@ -14359,7 +14359,7 @@
     },
     "/v2/co/simit/resoluciones": {
       "get": {
-        "summary": "GET /v2/co/simit/resoluciones",
+        "summary": "Fetch Colombia SIMIT resolutions",
         "responses": {
           "200": {
             "description": "Success"
@@ -14442,7 +14442,7 @@
     },
     "/v2/co/simit/comparendo": {
       "get": {
-        "summary": "GET /v2/co/simit/comparendo",
+        "summary": "Fetch Colombia SIMIT traffic ticket",
         "responses": {
           "200": {
             "description": "Success"
