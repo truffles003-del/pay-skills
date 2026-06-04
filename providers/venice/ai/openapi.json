@@ -55,7 +55,7 @@
       "name": "Crypto RPC"
     },
     {
-      "description": "Wallet-based API access using the x402 protocol. No API key required — authenticate with an EVM or Solana wallet.\n\n**How it works:**\n1. **Authenticate** — Send an `X-Sign-In-With-X` header (base64-encoded signed SIWX payload) with any request. EVM wallets sign an EIP-4361 SIWE message; Solana wallets sign the Solana SIWX message with Ed25519. See the `siwx` security scheme for the exact format.\n2. **Top up** — `POST /x402/top-up` without a payment header returns an `accepts` array with Base and Solana USDC payment options. Choose one entry, sign it using the x402 SDK (`npm install x402`), and re-submit with the `X-402-Payment` header.\n3. **Use any endpoint** — All inference endpoints (chat, image, audio, video, embeddings) accept `siwx` as an alternative to `BearerAuth`. Charges are deducted from your USDC credit balance.\n4. **Monitor balance** — `GET /x402/balance/{walletAddress}` returns your current balance. The `X-Balance-Remaining` response header on inference calls also reports it.\n\n**Quick start (5 lines):**\n```\nimport { VeniceClient } from '@venice-ai/x402-client'\nconst venice = new VeniceClient(process.env.WALLET_KEY)\nawait venice.topUp(10) // $10 USDC on a supported x402 rail\nconst res = await venice.chat({ model: 'zai-org-glm-5-1', messages: [{ role: 'user', content: 'Hello!' }] })\n```\n\n**Payment:** USDC on Base (chain ID 8453) or Solana mainnet. Minimum top-up: $5. Alternatively, stake DIEM tokens for daily credits (1 DIEM = $1/day).",
+      "description": "Wallet-based API access using the x402 protocol. No API key required \u2014 authenticate with an EVM or Solana wallet.\n\n**How it works:**\n1. **Authenticate** \u2014 Send an `X-Sign-In-With-X` header (base64-encoded signed SIWX payload) with any request. EVM wallets sign an EIP-4361 SIWE message; Solana wallets sign the Solana SIWX message with Ed25519. See the `siwx` security scheme for the exact format.\n2. **Top up** \u2014 `POST /x402/top-up` without a payment header returns an `accepts` array with Base and Solana USDC payment options. Choose one entry, sign it using the x402 SDK (`npm install x402 (protocol SDK for payment signing)`), and re-submit with the `X-402-Payment` header.\n3. **Use any endpoint** \u2014 All inference endpoints (chat, image, audio, video, embeddings) accept `siwx` as an alternative to `BearerAuth`. Charges are deducted from your USDC credit balance.\n4. **Monitor balance** \u2014 `GET /x402/balance/{walletAddress}` returns your current balance. The `X-Balance-Remaining` response header on inference calls also reports it.\n\n**Quick start (5 lines):**\n```\nimport { VeniceClient } from '@venice-ai/x402-client'\nconst venice = new VeniceClient(process.env.WALLET_KEY)\nawait venice.topUp(10) // $10 USDC on a supported x402 rail\nconst res = await venice.chat({ model: 'zai-org-glm-5-1', messages: [{ role: 'user', content: 'Hello!' }] })\n```\n\n**Payment:** USDC on Base (chain ID 8453) or Solana mainnet. Minimum top-up: $5. Alternatively, stake DIEM tokens for daily credits (1 DIEM = $1/day).",
       "name": "x402"
     }
   ],
@@ -67,7 +67,7 @@
         "type": "http"
       },
       "siwx": {
-        "description": "Wallet-based authentication using the x402 protocol (Sign-In-With-X). Supports EVM SIWE signatures on Base and Ed25519 signatures on Solana mainnet.\n\n**Header format:** Base64-encoded JSON object with the following fields:\n- `address` — EVM or Solana wallet address\n- `message` — Signed SIWX message. EVM wallets use EIP-4361 SIWE; Solana wallets use the Solana SIWX message format.\n- `signature` — Signature of the message, signed by the wallet's private key. EVM signatures are hex; Solana signatures may be base58 or base64.\n- `timestamp` — Unix timestamp in milliseconds\n- `chainId` — Chain identity. Use `8453`, `\"8453\"`, or `\"eip155:8453\"` for Base; use `\"solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp\"` for Solana.\n- `type` — Optional signature type. Use `\"ed25519\"` for Solana. Omitted means EVM/EIP-191 for backward compatibility.\n\n**EVM SIWE message fields:**\n- `domain`: `outerface.venice.ai`\n- `uri`: `https://outerface.venice.ai`\n- `version`: `\"1\"`\n- `chainId`: `8453`\n- `nonce`: Random 16-character hex string\n- `issuedAt` / `expirationTime`: ISO timestamps (recommended TTL: 10 minutes)\n- `statement`: `\"Sign in to Venice API\"`\n\n**Example (TypeScript):**\n```\nimport { Wallet } from 'ethers'\nimport { SiweMessage } from 'siwe'\n\nconst wallet = new Wallet(PRIVATE_KEY)\nconst msg = new SiweMessage({ domain: 'outerface.venice.ai', address: wallet.address, statement: 'Sign in to Venice API', uri: 'https://outerface.venice.ai', version: '1', chainId: 8453, nonce: crypto.randomUUID().replace(/-/g, '').slice(0, 16), issuedAt: new Date().toISOString(), expirationTime: new Date(Date.now() + 600000).toISOString() })\nconst signature = await wallet.signMessage(msg.prepareMessage())\nconst header = btoa(JSON.stringify({ address: wallet.address, message: msg.prepareMessage(), signature, timestamp: Date.now(), chainId: 8453 }))\n// Set header: X-Sign-In-With-X: <header>\n```\n\n**Solana message fields:** The signed message starts with `<domain> wants you to sign in with your Solana account:`, followed by the wallet address and the standard `URI`, `Version`, `Chain ID`, `Nonce`, `Issued At`, and optional `Expiration Time` fields. Use `type: \"ed25519\"` and `chainId: \"solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp\"` in the encoded JSON payload.\n\n**SDK:** `npm install @venice-ai/x402-client` provides `VeniceClient` and `createAuthFetch` which handle this automatically.\n\n**Billing:** x402 users pay from a prepaid USDC credit balance. Top up via `POST /x402/top-up`. When balance is insufficient, endpoints return `402` with structured top-up instructions.",
+        "description": "Wallet-based authentication using the x402 protocol (Sign-In-With-X). Supports EVM SIWE signatures on Base and Ed25519 signatures on Solana mainnet.\n\n**Header format:** Base64-encoded JSON object with the following fields:\n- `address` \u2014 EVM or Solana wallet address\n- `message` \u2014 Signed SIWX message. EVM wallets use EIP-4361 SIWE; Solana wallets use the Solana SIWX message format.\n- `signature` \u2014 Signature of the message, signed by the wallet's private key. EVM signatures are hex; Solana signatures may be base58 or base64.\n- `timestamp` \u2014 Unix timestamp in milliseconds\n- `chainId` \u2014 Chain identity. Use `8453`, `\"8453\"`, or `\"eip155:8453\"` for Base; use `\"solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp\"` for Solana.\n- `type` \u2014 Optional signature type. Use `\"ed25519\"` for Solana. Omitted means EVM/EIP-191 for backward compatibility.\n\n**EVM SIWE message fields:**\n- `domain`: `outerface.venice.ai`\n- `uri`: `https://outerface.venice.ai`\n- `version`: `\"1\"`\n- `chainId`: `8453`\n- `nonce`: Random 16-character hex string\n- `issuedAt` / `expirationTime`: ISO timestamps (recommended TTL: 10 minutes)\n- `statement`: `\"Sign in to Venice API\"`\n\n**Example (TypeScript):**\n```\nimport { Wallet } from 'ethers'\nimport { SiweMessage } from 'siwe'\n\nconst wallet = new Wallet(PRIVATE_KEY)\nconst msg = new SiweMessage({ domain: 'outerface.venice.ai', address: wallet.address, statement: 'Sign in to Venice API', uri: 'https://outerface.venice.ai', version: '1', chainId: 8453, nonce: crypto.randomUUID().replace(/-/g, '').slice(0, 16), issuedAt: new Date().toISOString(), expirationTime: new Date(Date.now() + 600000).toISOString() })\nconst signature = await wallet.signMessage(msg.prepareMessage())\nconst header = btoa(JSON.stringify({ address: wallet.address, message: msg.prepareMessage(), signature, timestamp: Date.now(), chainId: 8453 }))\n// Set header: X-Sign-In-With-X: <header>\n```\n\n**Solana message fields:** The signed message starts with `<domain> wants you to sign in with your Solana account:`, followed by the wallet address and the standard `URI`, `Version`, `Chain ID`, `Nonce`, `Issued At`, and optional `Expiration Time` fields. Use `type: \"ed25519\"` and `chainId: \"solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp\"` in the encoded JSON payload.\n\n**SDK:** `npm install @venice-ai/x402-client (Venice-specific client that wraps the x402 protocol SDK)` provides `VeniceClient` and `createAuthFetch` which handle this automatically.\n\n**Billing:** x402 users pay from a prepaid USDC credit balance. Top up via `POST /x402/top-up`. When balance is insufficient, endpoints return `402` with structured top-up instructions.",
         "in": "header",
         "name": "X-Sign-In-With-X",
         "type": "apiKey"
@@ -3249,7 +3249,7 @@
             "type": "integer",
             "minimum": 1,
             "maximum": 4,
-            "description": "Number of images to generate (1–4). Only supported when return_binary is false.",
+            "description": "Number of images to generate (1\u20134). Only supported when return_binary is false.",
             "example": 3
           },
           "safe_mode": {
@@ -4265,7 +4265,7 @@
         "properties": {
           "file": {
             "type": "string",
-            "description": "The voice sample audio file (multipart/form-data, field name \"file\"). Accepted containers depend on the selected model: `tts-chatterbox-hd` accepts MP3, WAV, FLAC, and M4A; `tts-minimax-speech-02-hd` accepts MP3 and WAV only. Recommended: a clean speech recording of at least 5–10 seconds.",
+            "description": "The voice sample audio file (multipart/form-data, field name \"file\"). Accepted containers depend on the selected model: `tts-chatterbox-hd` accepts MP3, WAV, FLAC, and M4A; `tts-minimax-speech-02-hd` accepts MP3 and WAV only. Recommended: a clean speech recording of at least 5\u201310 seconds.",
             "format": "binary"
           },
           "model": {
@@ -4419,7 +4419,7 @@
               "type": "string"
             },
             "maxItems": 3,
-            "description": "For models with reference video support (e.g. Seedance 2.0 R2V), up to 3 reference video URLs (`role: \"reference_video\"`) used to inherit subject motion, camera movement, and overall style. Per-clip 2–15 s, .mp4 or .mov, ≤50 MB; aggregate duration ≤15 s. Each must be a URL or data URL.",
+            "description": "For models with reference video support (e.g. Seedance 2.0 R2V), up to 3 reference video URLs (`role: \"reference_video\"`) used to inherit subject motion, camera movement, and overall style. Per-clip 2\u201315 s, .mp4 or .mov, \u226450 MB; aggregate duration \u226415 s. Each must be a URL or data URL.",
             "example": [
               "https://example.com/reference-clip.mp4"
             ]
@@ -4430,7 +4430,7 @@
               "type": "string"
             },
             "maxItems": 3,
-            "description": "For models with reference audio support (e.g. Seedance 2.0 R2V), up to 3 reference audio URLs (`role: \"reference_audio\"`) used as donors for vocal timbre, narration, or sound effects. Per-clip 2–15 s, .wav or .mp3; aggregate duration ≤15 s. Must be paired with at least one reference image or reference video — audio-only Reference workflows are rejected at validation. Each must be a URL or data URL.",
+            "description": "For models with reference audio support (e.g. Seedance 2.0 R2V), up to 3 reference audio URLs (`role: \"reference_audio\"`) used as donors for vocal timbre, narration, or sound effects. Per-clip 2\u201315 s, .wav or .mp3; aggregate duration \u226415 s. Must be paired with at least one reference image or reference video \u2014 audio-only Reference workflows are rejected at validation. Each must be a URL or data URL.",
             "example": [
               "data:audio/mpeg;base64,SUQzBAAAAAA..."
             ]
@@ -4580,7 +4580,7 @@
           "reference_video_total_duration": {
             "type": "number",
             "minimum": 0,
-            "description": "For R2V models (e.g. Seedance 2.0 R2V), the aggregate duration in seconds of all reference videos to include in the quote (max 45s; per-clip 2–15s, total ≤15s for Seedance). When provided, the quote reflects the BytePlus 'input with video' rate tier and the (input+output)×pixels token formula. When omitted, the quote returns the no-reference baseline.",
+            "description": "For R2V models (e.g. Seedance 2.0 R2V), the aggregate duration in seconds of all reference videos to include in the quote (max 45s; per-clip 2\u201315s, total \u226415s for Seedance). When provided, the quote reflects the BytePlus 'input with video' rate tier and the (input+output)\u00d7pixels token formula. When omitted, the quote returns the no-reference baseline.",
             "example": 5
           }
         },
@@ -5470,7 +5470,7 @@
               "google",
               "brave"
             ],
-            "description": "Search provider to use. \"brave\" uses Brave Search with Zero Data Retention (ZDR) for maximum privacy — search queries are never stored or logged. \"google\" uses Google Search with anonymized queries — searches are proxied through Venice's infrastructure so that your identity is not associated with the search request sent to Google. Venice does not store or log search queries. Defaults to \"brave\".",
+            "description": "Search provider to use. \"brave\" uses Brave Search with Zero Data Retention (ZDR) for maximum privacy \u2014 search queries are never stored or logged. \"google\" uses Google Search with anonymized queries \u2014 searches are proxied through Venice's infrastructure so that your identity is not associated with the search request sent to Google. Venice does not store or log search queries. Defaults to \"brave\".",
             "example": "brave"
           }
         },
@@ -6959,7 +6959,7 @@
                   "retention_days"
                 ],
                 "additionalProperties": false,
-                "description": "Voice-cloning capability. Only present for TTS models whose cloning endpoint is publicly available — pass the model to POST /v1/audio/voices to mint a `vv_<id>` voice handle, then pass that handle back as the `voice` parameter on POST /v1/audio/speech alongside the same `model`. Models with cloning gated behind a private alpha (e.g. MiniMax during the biometric-data legal review) omit this field for non-staff callers; the model itself still appears in the listing.",
+                "description": "Voice-cloning capability. Only present for TTS models whose cloning endpoint is publicly available \u2014 pass the model to POST /v1/audio/voices to mint a `vv_<id>` voice handle, then pass that handle back as the `voice` parameter on POST /v1/audio/speech alongside the same `model`. Models with cloning gated behind a private alpha (e.g. MiniMax during the biometric-data legal review) omit this field for non-staff callers; the model itself still appears in the listing.",
                 "title": "TTS Voice Cloning"
               },
               "default_voice": {
@@ -7798,7 +7798,7 @@
                               "url": "https://www.skyatnightmagazine.com/space-science/why-is-the-sky-blue"
                             },
                             {
-                              "content": "It was around 1870 when the British physicist John William Strutt, better known as Lord Rayleigh, first found an explanation for why the sky is blue: Blue light from the Sun is scattered the most when it passes through the atmosphere.\n\nPublished: January 20, 2025 8:34am EST · Daniel Freedman, University of Wisconsin-Stout · Daniel Freedman · Dean of the College of Science, Technology, Engineering, Mathematics & Management, University of Wisconsin-Stout ·\n\nThe answer has to do with molecules.\n\nIt was around 1870 when the British physicist John William Strutt, better known as Lord Rayleigh, first found an explanation for why the sky is blue: Blue light from the Sun is scattered the most when it passes through the atmosphere.\n\nWhen the Sun is near the horizon, its light passes through a lot more of the atmosphere to reach the Earth’s surface than when it is directly overhead. The blue and green light is scattered so well that you can hardly see it. The sky is colored, instead, with red and orange light.",
+                              "content": "It was around 1870 when the British physicist John William Strutt, better known as Lord Rayleigh, first found an explanation for why the sky is blue: Blue light from the Sun is scattered the most when it passes through the atmosphere.\n\nPublished: January 20, 2025 8:34am EST \u00b7 Daniel Freedman, University of Wisconsin-Stout \u00b7 Daniel Freedman \u00b7 Dean of the College of Science, Technology, Engineering, Mathematics & Management, University of Wisconsin-Stout \u00b7\n\nThe answer has to do with molecules.\n\nIt was around 1870 when the British physicist John William Strutt, better known as Lord Rayleigh, first found an explanation for why the sky is blue: Blue light from the Sun is scattered the most when it passes through the atmosphere.\n\nWhen the Sun is near the horizon, its light passes through a lot more of the atmosphere to reach the Earth\u2019s surface than when it is directly overhead. The blue and green light is scattered so well that you can hardly see it. The sky is colored, instead, with red and orange light.",
                               "date": "2025-04-16T16:55:11.000Z",
                               "title": "Why is the sky blue?",
                               "url": "https://theconversation.com/why-is-the-sky-blue-246393"
@@ -8384,7 +8384,8 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       }
     },
     "/image/generate": {
@@ -9159,7 +9160,8 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       }
     },
     "/image/edit": {
@@ -9434,7 +9436,8 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       }
     },
     "/image/multi-edit": {
@@ -9695,7 +9698,8 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       }
     },
     "/image/background-remove": {
@@ -9849,7 +9853,8 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       }
     },
     "/models": {
@@ -12246,7 +12251,7 @@
                             "type": "string",
                             "nullable": true,
                             "description": "Description of the character",
-                            "example": "Alan Watts (6 January 1915 – 16 November 1973) was a British and American writer, speaker, and self-styled \"philosophical entertainer\", known for interpreting and popularizing Buddhist, Taoist, and Hindu philosophy for a Western audience."
+                            "example": "Alan Watts (6 January 1915 \u2013 16 November 1973) was a British and American writer, speaker, and self-styled \"philosophical entertainer\", known for interpreting and popularizing Buddhist, Taoist, and Hindu philosophy for a Western audience."
                           },
                           "featured": {
                             "type": "boolean",
@@ -12455,7 +12460,7 @@
                           "type": "string",
                           "nullable": true,
                           "description": "Description of the character",
-                          "example": "Alan Watts (6 January 1915 – 16 November 1973) was a British and American writer, speaker, and self-styled \"philosophical entertainer\", known for interpreting and popularizing Buddhist, Taoist, and Hindu philosophy for a Western audience."
+                          "example": "Alan Watts (6 January 1915 \u2013 16 November 1973) was a British and American writer, speaker, and self-styled \"philosophical entertainer\", known for interpreting and popularizing Buddhist, Taoist, and Hindu philosophy for a Western audience."
                         },
                         "featured": {
                           "type": "boolean",
@@ -13340,7 +13345,8 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       }
     },
     "/audio/transcriptions": {
@@ -13616,12 +13622,13 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       }
     },
     "/audio/voices": {
       "post": {
-        "description": "Clone a voice from an audio sample. Returns a voice handle (`vv_...`) that can be passed to POST /v1/audio/speech as the `voice` parameter to synthesize speech in the cloned voice; the handle must be paired with the same `model` used to create it.\n\nSupported models:\n\n- `tts-chatterbox-hd` (Resemble AI) — accepts MP3, WAV, FLAC, and M4A samples. Zero-shot: no persistent voice template is derived; the reference audio is uploaded to a TTL’d storage object and re-read on each synthesis call. Handles expire automatically after 7 days.\n\n- `tts-minimax-speech-02-hd` (MiniMax) — accepts MP3 and WAV only. Persistent: the upstream provider derives a custom voice template that survives across synthesis calls. Auto-deleted after 7 days without use; each successful TTS request resets the window. Currently limited access — contact support@venice.ai if you need it enabled.\n\nSamples in containers outside the per-model allowlist are rejected with HTTP 400 before any upload.\n\n**Authentication:** This endpoint accepts either a Bearer API key or an `X-Sign-In-With-X` header for x402 wallet-based authentication. When using x402, a `402 Payment Required` response indicates insufficient balance and includes top-up instructions.",
+        "description": "Clone a voice from an audio sample. Returns a voice handle (`vv_...`) that can be passed to POST /v1/audio/speech as the `voice` parameter to synthesize speech in the cloned voice; the handle must be paired with the same `model` used to create it.\n\nSupported models:\n\n- `tts-chatterbox-hd` (Resemble AI) \u2014 accepts MP3, WAV, FLAC, and M4A samples. Zero-shot: no persistent voice template is derived; the reference audio is uploaded to a TTL\u2019d storage object and re-read on each synthesis call. Handles expire automatically after 7 days.\n\n- `tts-minimax-speech-02-hd` (MiniMax) \u2014 accepts MP3 and WAV only. Persistent: the upstream provider derives a custom voice template that survives across synthesis calls. Auto-deleted after 7 days without use; each successful TTS request resets the window. Currently limited access \u2014 contact support@venice.ai if you need it enabled.\n\nSamples in containers outside the per-model allowlist are rejected with HTTP 400 before any upload.\n\n**Authentication:** This endpoint accepts either a Bearer API key or an `X-Sign-In-With-X` header for x402 wallet-based authentication. When using x402, a `402 Payment Required` response indicates insufficient balance and includes top-up instructions.",
         "operationId": "createClonedVoice",
         "requestBody": {
           "content": {
@@ -13802,7 +13809,8 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       }
     },
     "/video/complete": {
@@ -13930,7 +13938,8 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       }
     },
     "/video/queue": {
@@ -14099,7 +14108,8 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       }
     },
     "/video/quote": {
@@ -14348,7 +14358,8 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       }
     },
     "/video/transcriptions": {
@@ -14508,12 +14519,13 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       }
     },
     "/augment/text-parser": {
       "post": {
-        "description": "Extracts text from a document file. Supports PDF, DOCX, PPTX, XLSX, and plain text formats. Upload a file via multipart/form-data.\n\n**Privacy:** Text parsing runs entirely in-memory on Venice's infrastructure with zero data retention. Documents are processed and immediately discarded — no content is stored or logged.\n\n**Authentication:** This endpoint accepts either a Bearer API key or an `X-Sign-In-With-X` header for x402 wallet-based authentication. When using x402, a `402 Payment Required` response indicates insufficient balance and includes top-up instructions.",
+        "description": "Extracts text from a document file. Supports PDF, DOCX, PPTX, XLSX, and plain text formats. Upload a file via multipart/form-data.\n\n**Privacy:** Text parsing runs entirely in-memory on Venice's infrastructure with zero data retention. Documents are processed and immediately discarded \u2014 no content is stored or logged.\n\n**Authentication:** This endpoint accepts either a Bearer API key or an `X-Sign-In-With-X` header for x402 wallet-based authentication. When using x402, a `402 Payment Required` response indicates insufficient balance and includes top-up instructions.",
         "operationId": "createTextParser",
         "requestBody": {
           "content": {
@@ -14687,7 +14699,8 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       }
     },
     "/audio/complete": {
@@ -14815,7 +14828,8 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       }
     },
     "/audio/queue": {
@@ -14989,7 +15003,8 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       }
     },
     "/audio/quote": {
@@ -15251,7 +15266,8 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       }
     },
     "/billing/balance": {
@@ -15393,7 +15409,7 @@
               "type": "string",
               "format": "date-time",
               "description": "End date for filtering records (ISO 8601)",
-              "example": "2024-12-31T23:59:59.000Z"
+              "example": "2024-01-01"
             },
             "required": false,
             "name": "endDate",
@@ -15446,7 +15462,7 @@
               "type": "string",
               "format": "date-time",
               "description": "Start date for filtering records (ISO 8601)",
-              "example": "2024-01-01T00:00:00.000Z"
+              "example": "2024-01-01"
             },
             "required": false,
             "name": "startDate",
@@ -15727,7 +15743,7 @@
               "type": "string",
               "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
               "description": "Start date for filtering records (YYYY-MM-DD). If provided, endDate is also required.",
-              "example": "2024-01-01T00:00:00.000Z"
+              "example": "2024-01-01"
             },
             "required": false,
             "name": "startDate",
@@ -15738,7 +15754,7 @@
               "type": "string",
               "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
               "description": "End date for filtering records (YYYY-MM-DD). If provided, startDate is also required.",
-              "example": "2024-01-31T00:00:00.000Z"
+              "example": "2024-01-01"
             },
             "required": false,
             "name": "endDate",
@@ -16078,7 +16094,7 @@
     },
     "/crypto/rpc/networks": {
       "get": {
-        "description": "Returns the alphabetically sorted list of network slugs supported by the Venice crypto RPC proxy.\n\nThis endpoint is **public** — no authentication required. Use it to discover which `:network` values are valid for `POST /api/v1/crypto/rpc/{network}`.",
+        "description": "Returns the alphabetically sorted list of network slugs supported by the Venice crypto RPC proxy.\n\nThis endpoint is **public** \u2014 no authentication required. Use it to discover which `:network` values are valid for `POST /api/v1/crypto/rpc/{network}`.",
         "operationId": "listCryptoRpcNetworks",
         "security": [
           {}
@@ -16138,7 +16154,7 @@
     },
     "/crypto/rpc/{network}": {
       "post": {
-        "description": "Proxy a JSON-RPC request to a supported blockchain node and bill per credit.\n\n## Request shapes\n- **Single request**: a JSON-RPC 2.0 object (`{ \"jsonrpc\":\"2.0\", \"method\":\"…\", \"params\":[…], \"id\":1 }`).\n- **Batch**: an array of up to 100 JSON-RPC 2.0 objects. If any item references an unsupported method, the entire batch is rejected with 400 and the offending methods are listed.\n\n## Supported methods\nMethods are classified into three pricing tiers:\n- **Standard (1×)**: `eth_call`, `eth_getBalance`, `eth_blockNumber`, `eth_sendRawTransaction`, `eth_getLogs`, `net_version`, `web3_clientVersion`, ERC-4337 bundler methods (`eth_sendUserOperation`, etc.), and chain-family extensions (`zks_*`, `linea_*`, `bor_*`, `starknet_*`).\n- **Advanced (2×)**: `trace_*`, `debug_*`, `txpool_inspect`, `txpool_status`, `arbtrace_*`.\n- **Large (4×)**: `trace_replayBlockTransactions`, `trace_replayTransaction`, `txpool_content`, `arbtrace_replay*`.\n\nStateful filter methods (`eth_newFilter`, `eth_getFilterChanges`, `eth_uninstallFilter`, etc.) are **not supported** — they break on a load-balanced HTTP proxy because filter state is pinned to a single upstream backend. Use `eth_getLogs` instead.\n\nWebSocket-only methods (`eth_subscribe`, `eth_unsubscribe`) return 400 because this proxy is HTTP-only.\n\n## Pricing\nCredits consumed per call = `baseCredits[chain] × methodTier`. `baseCredits` is 20 for most EVM chains (Ethereum, Base, Optimism, Arbitrum, Polygon, Linea, Avalanche, BSC, Blast) and Starknet; 30 for zkSync Era. The USD price per credit is `~7e-7` — a single standard EVM call costs ≈ $0.000014 and a large trace-replay costs ≈ $0.000056.\n\nPer-request errors at the JSON-RPC layer (HTTP 200 with an `error` field in a response item) are billed at 5 credits instead of the full method tier — a small concession for methods not supported on a given chain or bad-parameter responses.\n\n## Rate limits\nTwo caps apply per caller:\n- **Requests per minute**: 100 on the paid tier, 1000 on the staff tier.\n- **Credits per rolling 24 hours**: 10,000,000 on the paid tier, 100,000,000 on the staff tier.\nWhen either cap is exceeded, the request returns 429 with a `customMessage` identifying which cap tripped. The per-minute cap also sets the `X-RateLimit-*` response headers.\n\n## Idempotency\nSet the `Idempotency-Key` request header to any string matching `[A-Za-z0-9_-]{1,255}` to enable safe retries. The response is cached for 24 hours keyed on `(user, idempotency-key)`; replaying the same key with the same body returns the cached response with `Idempotent-Replayed: true`. Reusing the same key with a different body returns 400 to prevent silent corruption.\n\n**Authentication:** This endpoint accepts either a Bearer API key or an `X-Sign-In-With-X` header for x402 wallet-based authentication. When using x402, a `402 Payment Required` response indicates insufficient balance and includes top-up instructions.",
+        "description": "Proxy a JSON-RPC request to a supported blockchain node and bill per credit.\n\n## Request shapes\n- **Single request**: a JSON-RPC 2.0 object (`{ \"jsonrpc\":\"2.0\", \"method\":\"\u2026\", \"params\":[\u2026], \"id\":1 }`).\n- **Batch**: an array of up to 100 JSON-RPC 2.0 objects. If any item references an unsupported method, the entire batch is rejected with 400 and the offending methods are listed.\n\n## Supported methods\nMethods are classified into three pricing tiers:\n- **Standard (1\u00d7)**: `eth_call`, `eth_getBalance`, `eth_blockNumber`, `eth_sendRawTransaction`, `eth_getLogs`, `net_version`, `web3_clientVersion`, ERC-4337 bundler methods (`eth_sendUserOperation`, etc.), and chain-family extensions (`zks_*`, `linea_*`, `bor_*`, `starknet_*`).\n- **Advanced (2\u00d7)**: `trace_*`, `debug_*`, `txpool_inspect`, `txpool_status`, `arbtrace_*`.\n- **Large (4\u00d7)**: `trace_replayBlockTransactions`, `trace_replayTransaction`, `txpool_content`, `arbtrace_replay*`.\n\nStateful filter methods (`eth_newFilter`, `eth_getFilterChanges`, `eth_uninstallFilter`, etc.) are **not supported** \u2014 they break on a load-balanced HTTP proxy because filter state is pinned to a single upstream backend. Use `eth_getLogs` instead.\n\nWebSocket-only methods (`eth_subscribe`, `eth_unsubscribe`) return 400 because this proxy is HTTP-only.\n\n## Pricing\nCredits consumed per call = `baseCredits[chain] \u00d7 methodTier`. `baseCredits` is 20 for most EVM chains (Ethereum, Base, Optimism, Arbitrum, Polygon, Linea, Avalanche, BSC, Blast) and Starknet; 30 for zkSync Era. The USD price per credit is `~7e-7` \u2014 a single standard EVM call costs \u2248 $0.000014 and a large trace-replay costs \u2248 $0.000056.\n\nPer-request errors at the JSON-RPC layer (HTTP 200 with an `error` field in a response item) are billed at 5 credits instead of the full method tier \u2014 a small concession for methods not supported on a given chain or bad-parameter responses.\n\n## Rate limits\nTwo caps apply per caller:\n- **Requests per minute**: 100 on the paid tier, 1000 on the staff tier.\n- **Credits per rolling 24 hours**: 10,000,000 on the paid tier, 100,000,000 on the staff tier.\nWhen either cap is exceeded, the request returns 429 with a `customMessage` identifying which cap tripped. The per-minute cap also sets the `X-RateLimit-*` response headers.\n\n## Idempotency\nSet the `Idempotency-Key` request header to any string matching `[A-Za-z0-9_-]{1,255}` to enable safe retries. The response is cached for 24 hours keyed on `(user, idempotency-key)`; replaying the same key with the same body returns the cached response with `Idempotent-Replayed: true`. Reusing the same key with a different body returns 400 to prevent silent corruption.\n\n**Authentication:** This endpoint accepts either a Bearer API key or an `X-Sign-In-With-X` header for x402 wallet-based authentication. When using x402, a `402 Payment Required` response indicates insufficient balance and includes top-up instructions.",
         "operationId": "cryptoRpcProxy",
         "parameters": [
           {
@@ -16209,7 +16225,7 @@
                       },
                       "method": {
                         "type": "string",
-                        "description": "JSON-RPC method name. See the \"Supported methods\" section of the endpoint description for the classification into 1×/2×/4× pricing tiers.",
+                        "description": "JSON-RPC method name. See the \"Supported methods\" section of the endpoint description for the classification into 1\u00d7/2\u00d7/4\u00d7 pricing tiers.",
                         "example": "eth_chainId"
                       },
                       "params": {
@@ -16250,7 +16266,7 @@
                         },
                         "method": {
                           "type": "string",
-                          "description": "JSON-RPC method name. See the \"Supported methods\" section of the endpoint description for the classification into 1×/2×/4× pricing tiers.",
+                          "description": "JSON-RPC method name. See the \"Supported methods\" section of the endpoint description for the classification into 1\u00d7/2\u00d7/4\u00d7 pricing tiers.",
                           "example": "eth_chainId"
                         },
                         "params": {
@@ -16561,16 +16577,6 @@
         "description": "Get the x402 credit balance for a wallet address. Requires Sign-in-with-x authentication for the same EVM or Solana wallet.",
         "operationId": "getX402Balance",
         "parameters": [
-          {
-            "description": "base64-encoded JSON SIWX payload proving EVM or Solana wallet ownership",
-            "in": "header",
-            "name": "X-Sign-In-With-X",
-            "required": true,
-            "schema": {
-              "example": "siwx_example_token",
-              "type": "string"
-            }
-          },
           {
             "schema": {
               "type": "string",
@@ -16985,16 +16991,6 @@
         "operationId": "getX402Transactions",
         "parameters": [
           {
-            "description": "base64-encoded JSON SIWX payload proving EVM or Solana wallet ownership",
-            "in": "header",
-            "name": "X-Sign-In-With-X",
-            "required": true,
-            "schema": {
-              "example": "siwx_example_token",
-              "type": "string"
-            }
-          },
-          {
             "schema": {
               "type": "string",
               "pattern": "^(0x[a-fA-F0-9]{40}|[1-9A-HJ-NP-Za-km-z]{32,44})$",
@@ -17354,12 +17350,13 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       }
     },
     "/augment/search": {
       "post": {
-        "description": "Search the web and return results directly. Returns structured search results including titles, URLs, content snippets, and dates.\n\n**Search providers:**\n- `brave` (default) — Brave Search with Zero Data Retention (ZDR). Search queries are never stored or logged by the search provider.\n- `google` — Google Search with anonymized queries. Searches are proxied through Venice's infrastructure so that your identity is not associated with the search request sent to Google. Venice does not store or log search queries.\n\n**Authentication:** This endpoint accepts either a Bearer API key or an `X-Sign-In-With-X` header for x402 wallet-based authentication. When using x402, a `402 Payment Required` response indicates insufficient balance and includes top-up instructions.",
+        "description": "Search the web and return results directly. Returns structured search results including titles, URLs, content snippets, and dates.\n\n**Search providers:**\n- `brave` (default) \u2014 Brave Search with Zero Data Retention (ZDR). Search queries are never stored or logged by the search provider.\n- `google` \u2014 Google Search with anonymized queries. Searches are proxied through Venice's infrastructure so that your identity is not associated with the search request sent to Google. Venice does not store or log search queries.\n\n**Authentication:** This endpoint accepts either a Bearer API key or an `X-Sign-In-With-X` header for x402 wallet-based authentication. When using x402, a `402 Payment Required` response indicates insufficient balance and includes top-up instructions.",
         "operationId": "webSearch",
         "security": [
           {
@@ -17492,7 +17489,8 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       }
     }
   }

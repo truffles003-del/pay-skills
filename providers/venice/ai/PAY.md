@@ -2,7 +2,7 @@
 name: ai
 title: "Venice.ai — Private AI Inference"
 description: "OpenAI-compatible inference API for text, image, audio, and video generation with x402 wallet access. No API key required — authenticate with an EVM or Solana wallet via SIWX and pay with USDC credits."
-use_case: "Use for chat completions, image generation and editing, audio speech synthesis and transcription, video generation, embeddings, and blockchain RPC proxying — all payable with USDC via x402 without an account."
+use_case: "Use for chat completions, image generation and editing, audio speech synthesis and transcription, video generation, embeddings, web scraping, text parsing, semantic search (Augment endpoints), and blockchain RPC proxying — all payable with USDC via x402 without an account."
 category: ai_ml
 service_url: https://api.venice.ai/api/v1
 openapi:
@@ -30,3 +30,6 @@ Supports text, image, audio, and video generation across a wide range of open-so
 - Use `/models` to discover available models and their capabilities before making generation calls.
 - Use `/x402/balance/{walletAddress}` to check remaining credits before large generation jobs.
 - Batch image/audio/video work when possible — each request consumes credits based on compute cost.
+- Use `/augment/scrape` to extract structured content from a URL — useful for agents that need to read web pages without a separate scraping provider.
+- Use `/augment/search` for semantic web search — returns ranked results with snippets, payable per query with no search API key required.
+- Use `/augment/text-parser` to extract structured data from unstructured text — useful for parsing documents, receipts, or free-form input into typed fields.
