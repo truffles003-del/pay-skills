@@ -7283,7 +7283,7 @@
             }
           ]
         },
-        "summary": "/api/v1/chat/completions",
+        "summary": "Generate chat completion (OpenAI-compatible)",
         "tags": [
           "Chat"
         ],
@@ -7996,7 +7996,7 @@
             }
           ]
         },
-        "summary": "Create a response (Alpha)",
+        "summary": "Create a model response (Alpha endpoint)",
         "tags": [
           "Responses (Alpha)"
         ],
@@ -8425,7 +8425,7 @@
             }
           ]
         },
-        "summary": "/api/v1/image/generate",
+        "summary": "Generate image from a text prompt",
         "tags": [
           "Image"
         ],
@@ -8712,7 +8712,7 @@
             }
           ]
         },
-        "summary": "/api/v1/image/generations",
+        "summary": "Generate images (OpenAI-compatible API)",
         "tags": [
           "Image"
         ],
@@ -8945,7 +8945,7 @@
             "BearerAuth": []
           }
         ],
-        "summary": "/api/v1/image/styles",
+        "summary": "List available image generation styles",
         "tags": [
           "Image"
         ],
@@ -9048,7 +9048,7 @@
             }
           ]
         },
-        "summary": "/api/v1/image/upscale",
+        "summary": "Upscale image to higher resolution",
         "tags": [
           "Image"
         ],
@@ -9259,7 +9259,7 @@
             }
           ]
         },
-        "summary": "/api/v1/image/edit",
+        "summary": "Edit an image with text instructions",
         "tags": [
           "Image"
         ],
@@ -9535,7 +9535,7 @@
             }
           ]
         },
-        "summary": "/api/v1/image/multi-edit",
+        "summary": "Edit multiple images with text instructions",
         "tags": [
           "Image"
         ],
@@ -9741,7 +9741,7 @@
             }
           ]
         },
-        "summary": "/api/v1/image/background-remove",
+        "summary": "Remove background from an image",
         "tags": [
           "Image"
         ],
@@ -9867,7 +9867,7 @@
             "BearerAuth": []
           }
         ],
-        "summary": "/api/v1/models",
+        "summary": "List available inference models",
         "tags": [
           "Models"
         ],
@@ -9986,7 +9986,7 @@
             "BearerAuth": []
           }
         ],
-        "summary": "/api/v1/models/traits",
+        "summary": "List model traits and capabilities",
         "tags": [
           "Models"
         ],
@@ -10101,7 +10101,7 @@
             "BearerAuth": []
           }
         ],
-        "summary": "/api/v1/models/compatibility_mapping",
+        "summary": "Fetch OpenAI-to-Venice model mapping",
         "tags": [
           "Models"
         ],
@@ -10210,7 +10210,7 @@
       "get": {
         "description": "Return a list of API keys.",
         "operationId": "getApiKeys",
-        "summary": "/api/v1/api_keys",
+        "summary": "List API keys for the account",
         "tags": [
           "API Keys"
         ],
@@ -10469,7 +10469,7 @@
             }
           }
         ],
-        "summary": "/api/v1/api_keys",
+        "summary": "Delete an API key from the account",
         "tags": [
           "API Keys"
         ],
@@ -10528,7 +10528,7 @@
       "post": {
         "description": "Create a new API key.",
         "operationId": "createApiKey",
-        "summary": "/api/v1/api_keys",
+        "summary": "Create a new API key for the account",
         "tags": [
           "API Keys"
         ],
@@ -10850,7 +10850,7 @@
       "patch": {
         "description": "Update an existing API key. The description, expiration date, and consumption limits can be updated.",
         "operationId": "updateApiKey",
-        "summary": "/api/v1/api_keys",
+        "summary": "Update API key name or permissions",
         "tags": [
           "API Keys"
         ],
@@ -11193,7 +11193,7 @@
             "description": "The ID of the API key to retrieve"
           }
         ],
-        "summary": "Get API key details by ID",
+        "summary": "Fetch API key details by ID",
         "tags": [
           "API Keys"
         ],
@@ -11456,7 +11456,7 @@
       "get": {
         "description": "Return details about user balances and rate limits.",
         "operationId": "getApiKeyRateLimits",
-        "summary": "/api/v1/api_keys/rate_limits",
+        "summary": "Fetch current API key rate limits",
         "tags": [
           "API Keys"
         ],
@@ -11604,7 +11604,7 @@
       "get": {
         "description": "Returns the last 50 rate limits that the account exceeded.",
         "operationId": "getApiKeyRateLimitLogs",
-        "summary": "/api/v1/api_keys/rate_limits/log",
+        "summary": "Fetch API key rate limit log entries",
         "tags": [
           "API Keys"
         ],
@@ -11701,7 +11701,7 @@
         "description": "Returns the token required to generate an API key via a wallet.",
         "operationId": "getApiKeyGenerateWeb3Key",
         "security": [],
-        "summary": "/api/v1/api_keys/generate_web3_key",
+        "summary": "Fetch SIWX challenge for Web3 API key",
         "tags": [
           "API Keys"
         ],
@@ -11744,7 +11744,7 @@
         "description": "Authenticates a wallet holding sVVV and creates an API key.",
         "operationId": "postApiKeyGenerateWeb3Key",
         "security": [],
-        "summary": "/api/v1/api_keys/generate_web3_key",
+        "summary": "Generate Web3 API key from SIWX challenge",
         "tags": [
           "API Keys"
         ],
@@ -12045,7 +12045,7 @@
       "get": {
         "description": "This is a preview API and may change. Returns a list of characters supported in the API, with filtering by search, tags, categories, model, and sort options.",
         "operationId": "listCharacters",
-        "summary": "/api/v1/characters",
+        "summary": "List available AI characters",
         "tags": [
           "Characters",
           "Preview"
@@ -12425,7 +12425,7 @@
             }
           }
         ],
-        "summary": "/api/v1/characters/{slug}",
+        "summary": "Fetch character details by slug",
         "tags": [
           "Characters",
           "Preview"
@@ -12631,7 +12631,7 @@
       "get": {
         "description": "This is a preview API and may change. Returns paginated public reviews for a single character.",
         "operationId": "getCharacterReviews",
-        "summary": "/api/v1/characters/{slug}/reviews",
+        "summary": "List reviews for a character",
         "tags": [
           "Characters",
           "Preview"
@@ -12936,7 +12936,7 @@
             }
           ]
         },
-        "summary": "/api/v1/embeddings",
+        "summary": "Create embeddings for text input",
         "tags": [
           "Embeddings"
         ],
@@ -13192,7 +13192,7 @@
             }
           ]
         },
-        "summary": "/api/v1/audio/speech",
+        "summary": "Generate speech audio from text",
         "tags": [
           "Audio",
           "Speech"
@@ -13383,7 +13383,7 @@
             }
           ]
         },
-        "summary": "/api/v1/audio/transcriptions",
+        "summary": "Transcribe audio file to text",
         "tags": [
           "Audio",
           "Transcriptions"
@@ -13660,7 +13660,7 @@
             }
           ]
         },
-        "summary": "/api/v1/audio/voices",
+        "summary": "List available text-to-speech voices",
         "tags": [
           "Audio",
           "Voices"
@@ -13838,7 +13838,7 @@
             }
           ]
         },
-        "summary": "/api/v1/video/complete",
+        "summary": "Generate video synchronously from prompt",
         "tags": [
           "Video"
         ],
@@ -13967,7 +13967,7 @@
             }
           ]
         },
-        "summary": "/api/v1/video/queue",
+        "summary": "Queue an async video generation job",
         "tags": [
           "Video"
         ],
@@ -14116,7 +14116,7 @@
       "post": {
         "description": "Quote a video generation request based on pricing inputs (model, duration, resolution, aspect_ratio, audio). Returns the price in USD.",
         "operationId": "quoteVideo",
-        "summary": "/api/v1/video/quote",
+        "summary": "Quote price for video generation job",
         "tags": [
           "Video"
         ],
@@ -14196,7 +14196,7 @@
             }
           ]
         },
-        "summary": "/api/v1/video/retrieve",
+        "summary": "Retrieve queued video generation result",
         "tags": [
           "Video"
         ],
@@ -14396,7 +14396,7 @@
             }
           ]
         },
-        "summary": "/api/v1/video/transcriptions",
+        "summary": "Transcribe a video file audio track",
         "tags": [
           "Video",
           "Transcriptions"
@@ -14577,7 +14577,7 @@
             }
           ]
         },
-        "summary": "/api/v1/augment/text-parser",
+        "summary": "Parse structured data from text input",
         "tags": [
           "Augment"
         ],
@@ -14728,7 +14728,7 @@
             }
           ]
         },
-        "summary": "/api/v1/audio/complete",
+        "summary": "Generate audio synchronously from prompt",
         "tags": [
           "Audio"
         ],
@@ -14857,7 +14857,7 @@
             }
           ]
         },
-        "summary": "/api/v1/audio/queue",
+        "summary": "Queue an async audio generation job",
         "tags": [
           "Audio"
         ],
@@ -15011,7 +15011,7 @@
       "post": {
         "description": "Get a price quote for audio generation with the specified parameters.",
         "operationId": "quoteAudio",
-        "summary": "/api/v1/audio/quote",
+        "summary": "Quote price for audio generation job",
         "tags": [
           "Audio"
         ],
@@ -15093,7 +15093,7 @@
             }
           ]
         },
-        "summary": "/api/v1/audio/retrieve",
+        "summary": "Retrieve queued audio generation result",
         "tags": [
           "Audio"
         ],
@@ -15274,7 +15274,7 @@
       "get": {
         "description": "Get current balance information for the authenticated user. Returns remaining DIEM/USD balances and total DIEM epoch allocation for calculating usage percentage.",
         "operationId": "getBillingBalance",
-        "summary": "/api/v1/billing/balance",
+        "summary": "Fetch account USD credit balance",
         "tags": [
           "Billing"
         ],
@@ -15469,7 +15469,7 @@
             "in": "query"
           }
         ],
-        "summary": "/api/v1/billing/usage",
+        "summary": "Fetch account usage history",
         "tags": [
           "Billing"
         ],
@@ -15721,7 +15721,7 @@
       "get": {
         "description": "**Beta**: This endpoint is currently in beta and may be unstable. Request/response schemas and behavior may change without notice.\n\nGet aggregated usage analytics for the authenticated user with breakdowns by date, model, and API key. This endpoint provides summary views of your API usage, ideal for dashboards and usage monitoring. Data is cached for 10 minutes.",
         "operationId": "getBillingUsageAnalytics",
-        "summary": "/api/v1/billing/usage-analytics",
+        "summary": "Fetch account usage analytics by date",
         "tags": [
           "Billing"
         ],
@@ -16594,7 +16594,7 @@
             "siwx": []
           }
         ],
-        "summary": "/api/v1/x402/balance/{walletAddress}",
+        "summary": "Fetch x402 credit balance for a wallet",
         "tags": [
           "x402"
         ],
@@ -16748,7 +16748,7 @@
             }
           ]
         },
-        "summary": "/api/v1/x402/top-up",
+        "summary": "Generate x402 USDC top-up payment request",
         "tags": [
           "x402"
         ],
@@ -17033,7 +17033,7 @@
             "siwx": []
           }
         ],
-        "summary": "/api/v1/x402/transactions/{walletAddress}",
+        "summary": "List x402 transactions for a wallet",
         "tags": [
           "x402"
         ],
@@ -17240,7 +17240,7 @@
             }
           ]
         },
-        "summary": "/api/v1/augment/scrape",
+        "summary": "Scrape and extract content from a URL",
         "tags": [
           "Augment"
         ],
@@ -17379,7 +17379,7 @@
             }
           ]
         },
-        "summary": "/api/v1/augment/search",
+        "summary": "Search the web with augmented retrieval",
         "tags": [
           "Augment"
         ],

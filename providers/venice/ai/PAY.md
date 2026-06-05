@@ -2,7 +2,7 @@
 name: ai
 title: "Venice.ai — Private AI Inference"
 description: "OpenAI-compatible inference API for text, image, audio, and video generation with x402 wallet access. No API key required — authenticate with an EVM or Solana wallet via SIWX and pay with USDC credits."
-use_case: "Use for chat completions, image generation and editing, audio speech synthesis and transcription, video generation, embeddings, web scraping, text parsing, semantic search (Augment endpoints), and blockchain RPC proxying — all payable with USDC via x402 without an account."
+use_case: "Use for chat completions, image generation and editing, audio synthesis and transcription, video generation, embeddings, web scraping, text parsing, semantic search, and blockchain RPC proxying — all payable with USDC via x402 without an account."
 category: ai_ml
 service_url: https://api.venice.ai/api/v1
 openapi:
