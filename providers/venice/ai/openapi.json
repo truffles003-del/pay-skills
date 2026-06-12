@@ -7,7 +7,7 @@
     "description": "The Venice.ai API.",
     "termsOfService": "https://venice.ai/legal/tos",
     "title": "Venice.ai API",
-    "version": "20260601.194345",
+    "version": "20260612.003558",
     "x-guidance": "Venice.ai is an OpenAI-compatible inference API supporting text, image, audio, and video generation.\n\n**Authentication options:**\n- API Key: Use Bearer token in Authorization header\n- x402 Wallet: Use USDC credits via EVM or Solana wallet (no account required)\n\n**For x402 wallet access:**\n1. POST /x402/top-up without headers to get payment requirements\n2. Choose one of the returned Base or Solana payment options and sign a USDC payment using the x402 SDK\n3. POST /x402/top-up with X-402-Payment header to add credits\n4. Call any inference endpoint with X-Sign-In-With-X header\n\n**Pricing:** Prepaid credits consumed per request. Check /models for available models and their capabilities."
   },
   "openapi": "3.0.0",
@@ -986,7 +986,8 @@
                           },
                           "title": "Objects"
                         }
-                      ]
+                      ],
+                      "description": "The contents of the message."
                     },
                     "name": {
                       "type": "string",
@@ -1109,7 +1110,8 @@
                             "type": "string"
                           },
                           "type": {
-                            "type": "string"
+                            "type": "string",
+                            "description": "The type of reasoning detail."
                           }
                         },
                         "required": [
@@ -1142,7 +1144,8 @@
                   "type": "object",
                   "properties": {
                     "content": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The contents of the message."
                     },
                     "name": {
                       "type": "string",
@@ -1159,7 +1162,8 @@
                       ]
                     },
                     "tool_call_id": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "ID of the tool call that this message is responding to."
                     },
                     "tool_calls": {
                       "type": "array",
@@ -1245,7 +1249,8 @@
                           },
                           "title": "Objects"
                         }
-                      ]
+                      ],
+                      "description": "The contents of the message."
                     },
                     "name": {
                       "type": "string",
@@ -1333,7 +1338,8 @@
                           },
                           "title": "Objects"
                         }
-                      ]
+                      ],
+                      "description": "The contents of the message."
                     },
                     "name": {
                       "type": "string",
@@ -1663,7 +1669,8 @@
                     "type": "object",
                     "additionalProperties": {
                       "nullable": true
-                    }
+                    },
+                    "description": "The JSON Schema that the model's response must conform to."
                   },
                   "type": {
                     "type": "string",
@@ -1744,15 +1751,18 @@
                     "type": "object",
                     "properties": {
                       "name": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "The name of the function to call."
                       }
                     },
                     "required": [
                       "name"
-                    ]
+                    ],
+                    "description": "The specific function the model should call."
                   },
                   "type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of tool-choice selection (e.g. `function`)."
                   }
                 },
                 "required": [
@@ -1795,7 +1805,8 @@
                           "type": "string"
                         },
                         "name": {
-                          "type": "string"
+                          "type": "string",
+                          "description": "The name of the function to call."
                         },
                         "parameters": {
                           "type": "object",
@@ -1812,7 +1823,8 @@
                       },
                       "required": [
                         "name"
-                      ]
+                      ],
+                      "description": "The function definition exposed to the model, including its name and parameters."
                     },
                     "id": {
                       "type": "string"
@@ -2559,7 +2571,8 @@
                       "type": "object",
                       "properties": {
                         "name": {
-                          "type": "string"
+                          "type": "string",
+                          "description": "The name of the function to call."
                         },
                         "description": {
                           "type": "string"
@@ -2576,7 +2589,8 @@
                       },
                       "required": [
                         "name"
-                      ]
+                      ],
+                      "description": "The function definition exposed to the model, including its name and parameters."
                     }
                   },
                   "required": [
@@ -2758,7 +2772,8 @@
                   "type": "object",
                   "properties": {
                     "type": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The tool type (e.g. `function`)."
                     }
                   },
                   "required": [
@@ -2804,12 +2819,14 @@
                     "type": "object",
                     "properties": {
                       "name": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "The name of the function to call."
                       }
                     },
                     "required": [
                       "name"
-                    ]
+                    ],
+                    "description": "The specific function the model should call."
                   }
                 },
                 "required": [
@@ -7793,13 +7810,13 @@
                           "example": [
                             {
                               "content": "What&#x27;s the scientific reason behind Earth&#x27;s sky appearing blue to the human eye? And what&#x27;s the real colour of the sky?\n\nSave 30% on the shop price when you subscribe to BBC Sky at Night Magazine today!\n\nIn this article we'll look at the science behind why the sky is blue, or at least why it appears blue to our eyes.\n\nA beautiful blue sky is the sign of a pleasant day ahead. But what makes the sky appear blue?\n\nSo, the sky appears blue because the molecules of nitrogen and oxygen in the atmosphere scatter light in short wavelengths towards the blue end of the visible spectrum.",
-                              "date": "2024-08-13T13:45:16.000Z",
+                              "date": "2024-08-13T13:45:16",
                               "title": "Why is the sky blue? | BBC Sky at Night Magazine",
                               "url": "https://www.skyatnightmagazine.com/space-science/why-is-the-sky-blue"
                             },
                             {
                               "content": "It was around 1870 when the British physicist John William Strutt, better known as Lord Rayleigh, first found an explanation for why the sky is blue: Blue light from the Sun is scattered the most when it passes through the atmosphere.\n\nPublished: January 20, 2025 8:34am EST \u00b7 Daniel Freedman, University of Wisconsin-Stout \u00b7 Daniel Freedman \u00b7 Dean of the College of Science, Technology, Engineering, Mathematics & Management, University of Wisconsin-Stout \u00b7\n\nThe answer has to do with molecules.\n\nIt was around 1870 when the British physicist John William Strutt, better known as Lord Rayleigh, first found an explanation for why the sky is blue: Blue light from the Sun is scattered the most when it passes through the atmosphere.\n\nWhen the Sun is near the horizon, its light passes through a lot more of the atmosphere to reach the Earth\u2019s surface than when it is directly overhead. The blue and green light is scattered so well that you can hardly see it. The sky is colored, instead, with red and orange light.",
-                              "date": "2025-04-16T16:55:11.000Z",
+                              "date": "2025-04-16T16:55:11",
                               "title": "Why is the sky blue?",
                               "url": "https://theconversation.com/why-is-the-sky-blue-246393"
                             }
@@ -9048,7 +9065,7 @@
             }
           ]
         },
-        "summary": "Upscale image to higher resolution",
+        "summary": "Generate an upscaled, higher-resolution image",
         "tags": [
           "Image"
         ],
@@ -9184,6 +9201,7 @@
                         "enum": [
                           "firered-image-edit",
                           "qwen-edit",
+                          "qwen-edit-uncensored",
                           "grok-imagine-edit",
                           "grok-imagine-quality-edit",
                           "qwen-image-2-edit",
@@ -9217,6 +9235,7 @@
                         "enum": [
                           "firered-image-edit",
                           "qwen-edit",
+                          "qwen-edit-uncensored",
                           "grok-imagine-edit",
                           "grok-imagine-quality-edit",
                           "qwen-image-2-edit",
@@ -9259,7 +9278,7 @@
             }
           ]
         },
-        "summary": "Edit an image with text instructions",
+        "summary": "Generate an edited image from text instructions",
         "tags": [
           "Image"
         ],
@@ -9460,6 +9479,7 @@
                         "enum": [
                           "firered-image-edit",
                           "qwen-edit",
+                          "qwen-edit-uncensored",
                           "grok-imagine-edit",
                           "grok-imagine-quality-edit",
                           "qwen-image-2-edit",
@@ -9493,6 +9513,7 @@
                         "enum": [
                           "firered-image-edit",
                           "qwen-edit",
+                          "qwen-edit-uncensored",
                           "grok-imagine-edit",
                           "grok-imagine-quality-edit",
                           "qwen-image-2-edit",
@@ -9535,7 +9556,7 @@
             }
           ]
         },
-        "summary": "Edit multiple images with text instructions",
+        "summary": "Generate an edited image from multiple input images",
         "tags": [
           "Image"
         ],
@@ -13967,7 +13988,7 @@
             }
           ]
         },
-        "summary": "Queue an async video generation job",
+        "summary": "Create an async video generation job",
         "tags": [
           "Video"
         ],
@@ -14078,6 +14099,83 @@
               }
             }
           },
+          "409": {
+            "description": "Seedance consent is required before this request can be queued",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "string",
+                          "enum": [
+                            "needs_consent"
+                          ]
+                        },
+                        "message": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "code",
+                        "message"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "consent_flow": {
+                      "type": "string",
+                      "enum": [
+                        "seedance"
+                      ]
+                    },
+                    "face_media_roles": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "image",
+                          "end_image",
+                          "reference_image",
+                          "video",
+                          "reference_video"
+                        ]
+                      }
+                    },
+                    "consent": {
+                      "type": "object",
+                      "properties": {
+                        "consent_version": {
+                          "type": "string"
+                        },
+                        "policy_text": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "consent_version",
+                        "policy_text"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "docs_url": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "error",
+                    "consent_flow",
+                    "face_media_roles",
+                    "consent",
+                    "docs_url"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
           "413": {
             "description": "The request payload is too large. Please reduce the size of your request.",
             "content": {
@@ -14116,7 +14214,7 @@
       "post": {
         "description": "Quote a video generation request based on pricing inputs (model, duration, resolution, aspect_ratio, audio). Returns the price in USD.",
         "operationId": "quoteVideo",
-        "summary": "Quote price for video generation job",
+        "summary": "Fetch a price quote for a video generation job",
         "tags": [
           "Video"
         ],
@@ -14196,7 +14294,7 @@
             }
           ]
         },
-        "summary": "Retrieve queued video generation result",
+        "summary": "Fetch a queued video generation result",
         "tags": [
           "Video"
         ],
@@ -14857,7 +14955,7 @@
             }
           ]
         },
-        "summary": "Queue an async audio generation job",
+        "summary": "Create an async audio generation job",
         "tags": [
           "Audio"
         ],
@@ -15011,7 +15109,7 @@
       "post": {
         "description": "Get a price quote for audio generation with the specified parameters.",
         "operationId": "quoteAudio",
-        "summary": "Quote price for audio generation job",
+        "summary": "Fetch a price quote for an audio generation job",
         "tags": [
           "Audio"
         ],
@@ -15093,7 +15191,7 @@
             }
           ]
         },
-        "summary": "Retrieve queued audio generation result",
+        "summary": "Fetch a queued audio generation result",
         "tags": [
           "Audio"
         ],
@@ -16200,7 +16298,7 @@
             }
           ]
         },
-        "summary": "Proxy a JSON-RPC request to a supported blockchain",
+        "summary": "Send a JSON-RPC request to a supported blockchain",
         "tags": [
           "Crypto RPC"
         ],
@@ -16578,6 +16676,16 @@
         "operationId": "getX402Balance",
         "parameters": [
           {
+            "description": "base64-encoded JSON SIWX payload proving EVM or Solana wallet ownership",
+            "in": "header",
+            "name": "X-Sign-In-With-X",
+            "required": true,
+            "schema": {
+              "example": "siwx_example_token",
+              "type": "string"
+            }
+          },
+          {
             "schema": {
               "type": "string",
               "pattern": "^(0x[a-fA-F0-9]{40}|[1-9A-HJ-NP-Za-km-z]{32,44})$",
@@ -16720,13 +16828,13 @@
     },
     "/x402/top-up": {
       "post": {
-        "description": "Top up your Venice credit balance using an `X-402-Payment` header. If the header is missing, the endpoint returns payment requirements.\n\nThis is the primary x402 payment endpoint. It currently returns Base and Solana USDC payment options in the `accepts` array. All inference endpoints (chat, image, audio, video) consume from the credit balance you establish here.",
+        "description": "Top up your Venice credit balance using a `PAYMENT-SIGNATURE` header (the legacy `X-402-Payment` and `X-PAYMENT` header names are also accepted). If the header is missing, the endpoint returns payment requirements.\n\nThis is the primary x402 payment endpoint. It currently returns Base and Solana USDC payment options in the `accepts` array. All inference endpoints (chat, image, audio, video) consume from the credit balance you establish here.",
         "operationId": "topUpX402Balance",
         "parameters": [
           {
-            "description": "Signed x402 payment payload used to top up the wallet balance on a supported rail such as Base or Solana.",
+            "description": "Signed x402 v2 payment payload (base64-encoded `PaymentPayload`) used to top up the wallet balance on a supported rail such as Base or Solana. The canonical header is `PAYMENT-SIGNATURE`; the `X-402-Payment` and `X-PAYMENT` names are also accepted for backwards compatibility. If no payment header is present, the endpoint returns the 402 payment requirements.",
             "in": "header",
-            "name": "X-402-Payment",
+            "name": "PAYMENT-SIGNATURE",
             "required": false,
             "schema": {
               "example": "eyJ4NDAyVmVyc2lvbiI6MiwicGF5bG9hZCI6Ii4uLiJ9",
@@ -16759,7 +16867,9 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {}
+                "properties": {},
+                "additionalProperties": false,
+                "description": "No body fields are required. Payment is supplied via the PAYMENT-SIGNATURE header; send an empty object to discover payment requirements."
               }
             }
           }
@@ -16767,6 +16877,14 @@
         "responses": {
           "200": {
             "description": "Top-up completed successfully.",
+            "headers": {
+              "PAYMENT-RESPONSE": {
+                "description": "Base64-encoded x402 v2 settlement result (`{ success, network, payer, transaction }`).",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -16872,37 +16990,38 @@
                       "items": {
                         "type": "object",
                         "properties": {
-                          "protocol": {
+                          "scheme": {
                             "type": "string",
                             "enum": [
-                              "x402"
+                              "exact"
                             ],
-                            "description": "Payment protocol identifier."
-                          },
-                          "version": {
-                            "type": "number",
-                            "description": "Protocol version.",
-                            "example": 2
+                            "description": "x402 payment scheme.",
+                            "example": "exact"
                           },
                           "network": {
                             "type": "string",
-                            "description": "Payment network. Base uses CAIP-2 EIP-155 format; Solana uses the x402 Solana network alias.",
-                            "example": "solana"
-                          },
-                          "asset": {
-                            "type": "string",
-                            "description": "USDC token address or mint for the selected network.",
-                            "example": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+                            "description": "Payment network in CAIP-2 form (e.g. `eip155:8453` for Base, `solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp` for Solana mainnet).",
+                            "example": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
                           },
                           "amount": {
                             "type": "string",
                             "description": "Minimum payment amount in base units (USDC has 6 decimals).",
                             "example": "5000000"
                           },
+                          "asset": {
+                            "type": "string",
+                            "description": "USDC token address or mint for the selected network.",
+                            "example": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+                          },
                           "payTo": {
                             "type": "string",
                             "description": "Receiver wallet address.",
                             "example": "8qUL23aSj7mDWdoLMXGHFvnVCT9wd7jXcysiekroADEL"
+                          },
+                          "maxTimeoutSeconds": {
+                            "type": "number",
+                            "description": "Maximum time allowed for payment settlement, in seconds.",
+                            "example": 300
                           },
                           "extra": {
                             "type": "object",
@@ -16916,12 +17035,12 @@
                           }
                         },
                         "required": [
-                          "protocol",
-                          "version",
+                          "scheme",
                           "network",
-                          "asset",
                           "amount",
-                          "payTo"
+                          "asset",
+                          "payTo",
+                          "maxTimeoutSeconds"
                         ],
                         "additionalProperties": false
                       },
@@ -16990,6 +17109,16 @@
         "description": "Get paginated x402 transaction history for a wallet address. Requires Sign-in-with-x authentication for the same EVM or Solana wallet.",
         "operationId": "getX402Transactions",
         "parameters": [
+          {
+            "description": "base64-encoded JSON SIWX payload proving EVM or Solana wallet ownership",
+            "in": "header",
+            "name": "X-Sign-In-With-X",
+            "required": true,
+            "schema": {
+              "example": "siwx_example_token",
+              "type": "string"
+            }
+          },
           {
             "schema": {
               "type": "string",
