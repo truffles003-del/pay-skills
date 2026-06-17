@@ -16676,16 +16676,6 @@
         "operationId": "getX402Balance",
         "parameters": [
           {
-            "description": "base64-encoded JSON SIWX payload proving EVM or Solana wallet ownership",
-            "in": "header",
-            "name": "SIGN-IN-WITH-X",
-            "required": true,
-            "schema": {
-              "example": "siwx_example_token",
-              "type": "string"
-            }
-          },
-          {
             "schema": {
               "type": "string",
               "pattern": "^(0x[a-fA-F0-9]{40}|[1-9A-HJ-NP-Za-km-z]{32,44})$",
@@ -17109,16 +17099,6 @@
         "description": "Get paginated x402 transaction history for a wallet address. Requires Sign-in-with-x authentication for the same EVM or Solana wallet.",
         "operationId": "getX402Transactions",
         "parameters": [
-          {
-            "description": "base64-encoded JSON SIWX payload proving EVM or Solana wallet ownership",
-            "in": "header",
-            "name": "SIGN-IN-WITH-X",
-            "required": true,
-            "schema": {
-              "example": "siwx_example_token",
-              "type": "string"
-            }
-          },
           {
             "schema": {
               "type": "string",
