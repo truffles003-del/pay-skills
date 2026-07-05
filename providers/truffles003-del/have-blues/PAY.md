@@ -48,7 +48,7 @@ The `pay` CLI auto-handles the 402 challenge, signs the payment, retries the req
 ## Limits
 
 * SSRF protection: only public HTTP/HTTPS targets accepted; private IP ranges (127.0.0.0/8, 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, 169.254.0.0/16) and `file://`/`ftp://`/`javascript:` are refused.
-* Daily LLM spend is capped on the provider side; calls beyond the cap return `429 Payment Required` until the next UTC day.
+* Daily LLM spend is capped on the provider side; calls beyond the cap return `429 Too Many Requests` until the next UTC day.
 * Sub-skill workspaces (generated files) live on the provider's machine; copies are returned in the JSON response.
 
 ## Security notes
